@@ -1,5 +1,5 @@
 /* Jozve Reader service worker: keeps the reader itself available offline. Your files live in the reader's own storage, not here. */
-var V = 'jzr-569bd6bac5';
+var V = 'jzr-bde6db3257';
 var SHELL = ['./', './index.html', './manifest.webmanifest', './Vazirmatn.woff2', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './favicon.png'];
 self.addEventListener('install', function (e) { e.waitUntil(caches.open(V).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); })); });
 self.addEventListener('activate', function (e) { e.waitUntil(caches.keys().then(function (ks) { return Promise.all(ks.filter(function (k) { return k.indexOf('jzr-') === 0 && k !== V; }).map(function (k) { return caches.delete(k); })); }).then(function () { return self.clients.claim(); })); });

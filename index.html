@@ -242,14 +242,15 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 .land .lang, .ob .lang { background: rgba(255,255,255,.14); }
 .land .lang button, .ob .lang button { color: rgba(255,255,255,.75); }
 .land .lang button.on { background: #fff; color: var(--g1); }
-.lhero { text-align: center; margin-top: 2vh; }
+.lhero { text-align: center; margin: auto 0; padding: 4vh 0; }
 .lico { position: relative; width: 128px; height: 128px; margin: 0 auto; }
 .lico img { position: relative; width: 128px; height: 128px; border-radius: 34px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.15); animation: pop .7s cubic-bezier(.2,1.4,.4,1); }
 .lico .ring { position: absolute; inset: -14px; border-radius: 46px; border: 2px solid rgba(111,224,198,.5); animation: pulse 2.4s ease-out infinite; }
 @keyframes pulse { 0% { transform: scale(.9); opacity: .9; } 100% { transform: scale(1.25); opacity: 0; } }
 .lhero h1 { margin: 22px 0 6px; font-size: 2.6rem; font-weight: 900; letter-spacing: .5px; direction: ltr; background: linear-gradient(90deg, #fff, #b8f5e4); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.lhero .ltag { margin: 0 auto; max-width: 340px; font-size: 1rem; opacity: .88; line-height: 1.9; }
-.lfeat { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 3.5vh 0 3vh; }
+.lhero .ltag { margin: 0 auto; font-size: 1.05rem; opacity: .8; letter-spacing: .3px; }
+.lhero .lby { margin-top: 26px; display: inline-block; font-size: .78rem; opacity: .65; border-top: 1px solid rgba(255,255,255,.25); padding-top: 12px; }
+.lfeat { display: none; }
 .lf { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 12px 14px; animation: rise .5s both; }
 .lf:nth-child(2) { animation-delay: .08s; } .lf:nth-child(3) { animation-delay: .16s; } .lf:nth-child(4) { animation-delay: .24s; }
 .lf .fi { width: 42px; height: 42px; border-radius: 13px; background: rgba(255,255,255,.14); display: grid; place-items: center; flex: none; }
@@ -315,6 +316,101 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 .toast { bottom: calc(var(--tabh) + 26px + env(safe-area-inset-bottom)); }
 .tile .ti { background-image: linear-gradient(145deg, rgba(255,255,255,.6), rgba(255,255,255,0)); }
 .sec { font-size: 1.1rem; }
+
+/* ── study ── */
+.lead { margin: 6px 4px 14px; color: var(--muted); font-size: .9rem; line-height: 1.9; }
+.sgrid { display: grid; gap: 14px; }
+@media (min-width: 760px) { .sgrid { grid-template-columns: 1fr 1fr; align-items: start; } }
+.chd { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.chd svg { color: var(--g1); }
+.chd b { font-size: 1rem; }
+.chd .n { color: var(--muted); font-size: .82rem; font-weight: 700; }
+.lnk2 { margin-inline-start: auto; background: none; border: 0; color: var(--g1); font-weight: 900; font-size: .85rem; padding: 4px 2px; }
+.focus { padding: 18px; text-align: center; background: linear-gradient(160deg, #ffffff, #f2faf7); }
+.fhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.fhead b { font-size: 1.05rem; }
+.seg2 { display: flex; background: #eef2f1; border-radius: 12px; padding: 3px; }
+.seg2 button { border: 0; background: none; border-radius: 9px; padding: 5px 10px; font-weight: 800; font-size: .78rem; color: var(--muted); }
+.seg2 button.on { background: #fff; color: var(--g1); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.dial { position: relative; width: 220px; height: 220px; margin: 18px auto 8px; }
+.dial svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.dial circle { fill: none; stroke-width: 9; }
+.dial .trk { stroke: #e3ece9; }
+.dial .arc { stroke: url(#gr); stroke: var(--g2); stroke-linecap: round; stroke-dasharray: 326.7; stroke-dashoffset: 0; transition: stroke-dashoffset .9s linear; }
+.dial.brk .arc { stroke: var(--gold); }
+.dtx { position: absolute; inset: 0; display: grid; place-content: center; }
+.dtx b { font-size: 2.9rem; font-weight: 900; direction: ltr; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
+.dtx small { color: var(--muted); font-weight: 800; font-size: .82rem; }
+.fctl { display: flex; align-items: center; justify-content: center; gap: 16px; position: relative; }
+.rnd { width: 52px; height: 52px; border-radius: 50%; border: 0; display: grid; place-items: center; }
+.rnd svg { width: 24px; height: 24px; }
+.rnd.p { width: 70px; height: 70px; background: linear-gradient(135deg, var(--g1), var(--g2)); color: #fff; box-shadow: 0 14px 26px -12px rgba(8,63,55,.9); }
+.rnd.p svg { width: 30px; height: 30px; }
+.rnd.s { background: #eef2f1; color: var(--ink2); }
+.fcount { position: absolute; inset-inline-end: 6px; color: var(--muted); font-weight: 800; font-size: .8rem; }
+.stat { padding: 16px; }
+.srow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+.srow small { display: block; color: var(--muted); font-size: .74rem; font-weight: 800; }
+.srow b { display: block; font-size: 1.25rem; font-weight: 900; color: var(--g1); margin-top: 2px; }
+.goalb { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+.gbar { flex: 1; height: 10px; border-radius: 6px; background: #e3ece9; overflow: hidden; }
+.gbar i { display: block; height: 100%; width: 0; border-radius: 6px; background: linear-gradient(90deg, var(--g2), #4fd1b0); transition: width .6s; }
+.goalb .lnk2 { margin: 0; white-space: nowrap; }
+.bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; align-items: end; height: 92px; margin-top: 16px; }
+.bars div { display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+.bars i { width: 100%; max-width: 26px; border-radius: 7px 7px 4px 4px; background: #d5ebe4; min-height: 4px; transition: height .6s; }
+.bars div.on i { background: linear-gradient(180deg, #4fd1b0, var(--g1)); }
+.bars span { font-size: .7rem; color: var(--muted); font-weight: 800; }
+.exams, .todo, .mynotes { padding: 16px; }
+.exams { margin-top: 14px; }
+.ex { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px dashed var(--line); }
+.ex:first-child { border-top: 0; }
+.ex .dd { width: 56px; flex: none; border-radius: 14px; background: var(--soft); color: var(--g1); text-align: center; padding: 6px 0; }
+.ex .dd b { display: block; font-size: 1.25rem; line-height: 1.2; } .ex .dd small { font-size: .66rem; font-weight: 800; }
+.ex.soon .dd { background: #fff1e6; color: #c2410c; }
+.ex .tx { flex: 1; min-width: 0; } .ex .tx b { display: block; font-size: .95rem; } .ex .tx small { color: var(--muted); font-size: .76rem; }
+.xb { border: 0; background: none; color: #a3afb6; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex: none; }
+.xb svg { width: 18px; height: 18px; }
+.xb:active { background: #f1f4f3; }
+.tdin { display: flex; gap: 8px; margin-bottom: 8px; }
+.tdin input { flex: 1; min-width: 0; border: 1px solid #d6dfdc; border-radius: 12px; padding: 10px 12px; font: inherit; background: #fbfcfc; }
+.tdin input:focus { outline: 2px solid var(--g2); border-color: transparent; }
+.tdin .btn { padding: 0 14px; }
+.td { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px dashed var(--line); }
+.td .cb { width: 26px; height: 26px; border-radius: 8px; border: 2px solid #c9d6d2; background: #fff; display: grid; place-items: center; flex: none; color: #fff; padding: 0; }
+.td .cb svg { width: 16px; height: 16px; opacity: 0; }
+.td.done .cb { background: var(--g2); border-color: var(--g2); } .td.done .cb svg { opacity: 1; }
+.td span { flex: 1; font-size: .92rem; line-height: 1.7; word-break: break-word; }
+.td.done span { color: var(--muted); text-decoration: line-through; }
+.mn { padding: 10px 0; border-top: 1px dashed var(--line); }
+.mn:first-child { border-top: 0; }
+.mn p { margin: 0; font-size: .9rem; line-height: 1.85; white-space: pre-line; }
+.mn small { color: var(--muted); font-size: .74rem; font-weight: 700; }
+.none { color: var(--muted); font-size: .86rem; text-align: center; padding: 10px 0 4px; line-height: 1.8; }
+.today { margin-top: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 14px; cursor: pointer; }
+.today .ring { width: 58px; height: 58px; flex: none; position: relative; }
+.today .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.today .ring circle { fill: none; stroke-width: 7; }
+.today .ring .t0 { stroke: #e3ece9; } .today .ring .t1 { stroke: var(--g2); stroke-linecap: round; stroke-dasharray: 150.8; transition: stroke-dashoffset .6s; }
+.today .ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: .78rem; font-weight: 900; color: var(--g1); }
+.today .tx { flex: 1; } .today .tx b { display: block; font-size: .98rem; } .today .tx small { color: var(--muted); font-size: .8rem; }
+.today .fl2 { display: flex; align-items: center; gap: 4px; color: #e8590c; font-weight: 900; font-size: .9rem; }
+.today .fl2 svg { width: 20px; height: 20px; }
+/* samples */
+.slist { display: grid; gap: 12px; }
+@media (min-width: 760px) { .slist { grid-template-columns: 1fr 1fr; } }
+.smp { display: flex; align-items: stretch; overflow: hidden; cursor: pointer; }
+.smp .sc { width: 92px; flex: none; display: grid; place-items: center; color: #fff; position: relative; overflow: hidden; }
+.smp .sc svg { width: 34px; height: 34px; position: relative; }
+.smp .sc::after { content: ""; position: absolute; width: 90px; height: 90px; bottom: -30px; inset-inline-end: -30px; border: 3px solid rgba(255,255,255,.2); border-radius: 22px; transform: rotate(30deg); }
+.smp .sb { flex: 1; padding: 12px 14px; min-width: 0; }
+.smp .sb b { display: block; font-size: .98rem; line-height: 1.6; }
+.smp .sb small { display: block; color: var(--muted); font-size: .8rem; line-height: 1.7; }
+.smp .sb .lb { display: inline-block; margin-top: 6px; background: var(--gold-soft); color: var(--gold); border-radius: 8px; padding: 1px 9px; font-size: .74rem; font-weight: 900; }
+.smp .sb .lb.new { background: #e8f1ff; color: var(--blue); }
+.smp .go2 { display: grid; place-items: center; padding: 0 14px; color: var(--g1); }
+.smp .go2 svg { width: 22px; height: 22px; }
+[dir=rtl] .smp .go2 svg { transform: scaleX(-1); }
 /* ── shell ── */
 .top { position: sticky; top: 0; z-index: 25; background: rgba(243,246,245,.97); border-bottom: 1px solid transparent; transition: border-color .2s; }
 .top.sh { border-bottom-color: var(--line); }
@@ -430,6 +526,16 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   <symbol id="refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></symbol>
   <symbol id="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
   <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke-linecap="round"/></symbol>
+  <symbol id="timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="todoic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M8 9l1.5 1.5L12 8M8 15l1.5 1.5L12 14M14.5 9.5H17M14.5 15.5H17"/></symbol>
+  <symbol id="note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4M8 12h8M8 16h6"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></symbol>
+  <symbol id="pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6.5" y="5" width="4" height="14" rx="1.2"/><rect x="13.5" y="5" width="4" height="14" rx="1.2"/></symbol>
+  <symbol id="reset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a8 8 0 1 1 2.3 5.7"/><path d="M4 4v7h7"/></symbol>
+  <symbol id="trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+  <symbol id="flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4 0 7-2.7 7-6.8 0-4.6-4-6.7-4.5-11.2-2.8 1.8-4.8 4.6-4.3 8-1.4-.6-2.2-1.8-2.4-3.2C6.3 9.3 5 11.5 5 14.2 5 18.3 8 21 12 21z"/></symbol>
   <symbol id="dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
   <symbol id="menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
   <symbol id="back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
@@ -443,7 +549,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
     <div class="lhero">
       <div class="lico"><span class="ring"></span><img src="icon-512.png" alt=""></div>
       <h1>StudyNote</h1>
-      <p class="ltag" id="lTag"></p>
+      <p class="ltag" id="lTag"></p><div class="lby" id="lBy"></div>
     </div>
     <div class="lfeat" id="lFeat"></div>
     <div class="lcta">
@@ -486,7 +592,9 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
     <div class="me" data-go="me"><span class="av" id="dAv">S</span><div><b id="dName"></b><small id="dSub"></small></div></div></div>
   <nav class="dn" id="dnav">
     <button type="button" data-go="home"><svg><use href="#home"/></svg><span data-t="tHome"></span></button>
+    <button type="button" data-go="study"><svg><use href="#timer"/></svg><span data-t="tStudy"></span></button>
     <button type="button" data-go="store"><svg><use href="#bag"/></svg><span data-t="tStore"></span></button>
+    <button type="button" data-go="samples"><svg><use href="#gift"/></svg><span data-t="samplesH"></span></button>
     <button type="button" data-go="lib"><svg><use href="#shelf"/></svg><span data-t="tLib"></span></button>
     <button type="button" data-go="news"><svg><use href="#bell"/></svg><span data-t="newsH"></span><i class="badge" id="nb2"></i></button>
     <hr>
@@ -495,7 +603,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
     <button type="button" id="dInst"><svg><use href="#dl"/></svg><span data-t="instApp"></span></button>
     <a href="https://t.me/itamirabbas" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-t="supT"></span></a>
   </nav>
-  <div class="df"><span id="au3"></span><br>StudyNote <span dir="ltr">v569bd6bac5</span></div>
+  <div class="df"><span id="au3"></span><br>StudyNote <span dir="ltr">vbde6db3257</span></div>
 </aside>
 
 <header class="top" id="bar"><div class="top-in">
@@ -509,15 +617,16 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   <div id="inst"></div>
 
   <section class="view" id="v-home">
-    <div class="hero"><h2 id="hello"></h2><p data-t="helloP"></p></div>
+    <div class="hero"><h2 id="hello"></h2><p id="today"></p></div>
     <div class="tiles">
-      <button class="tile" type="button" data-go="store"><span class="ti t1"><svg><use href="#bag"/></svg></span><span data-t="tStore"></span></button>
-      <button class="tile" type="button" data-go="lib"><span class="ti t2"><svg><use href="#shelf"/></svg></span><span data-t="tLib"></span></button>
-      <button class="tile" type="button" data-go="news"><span class="ti t3"><svg><use href="#bell"/></svg></span><span data-t="newsS"></span><i class="badge" id="nb3"></i></button>
-      <button class="tile" type="button" data-go="help"><span class="ti t4"><svg><use href="#help"/></svg></span><span data-t="helpH"></span></button>
+      <button class="tile" type="button" data-go="lib"><span class="ti t1"><svg><use href="#shelf"/></svg></span><span data-t="tLib"></span></button>
+      <button class="tile" type="button" data-go="study"><span class="ti t2"><svg><use href="#timer"/></svg></span><span data-t="focusS"></span></button>
+      <button class="tile" type="button" data-go="samples"><span class="ti t3"><svg><use href="#gift"/></svg></span><span data-t="samplesS"></span></button>
+      <button class="tile" type="button" data-go="news"><span class="ti t4"><svg><use href="#bell"/></svg></span><span data-t="newsS"></span><i class="badge" id="nb3"></i></button>
     </div>
     <div id="instC"></div>
     <div id="cont"></div>
+    <div class="card today" id="todayC" data-go="study"></div>
     <div id="onb"></div>
     <div class="sec"><span class="dot"></span><span data-t="storeH"></span><button class="lnk" type="button" data-go="store" data-t="seeAll"></button></div>
     <div class="hrow" id="hbooks"></div>
@@ -531,6 +640,41 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   </section>
 
   <section class="view det" id="v-book"></section>
+
+  <section class="view" id="v-samples">
+    <p class="lead" data-t="samplesP"></p>
+    <div class="slist" id="slist"></div>
+  </section>
+
+  <section class="view" id="v-study">
+    <div class="sgrid">
+      <div class="card focus">
+        <div class="fhead"><b data-t="focusH"></b><div class="seg2" id="fModes"></div></div>
+        <div class="dial"><svg viewBox="0 0 120 120"><circle class="trk" cx="60" cy="60" r="52"/><circle class="arc" id="fArc" cx="60" cy="60" r="52"/></svg><div class="dtx"><b id="fTime">25:00</b><small id="fLbl"></small></div></div>
+        <div class="fctl"><button class="rnd s" type="button" id="fReset" aria-label="reset"><svg><use href="#reset"/></svg></button><button class="rnd p" type="button" id="fGo" aria-label="start"><svg id="fGoI"><use href="#play"/></svg></button><span class="fcount" id="fCount"></span></div>
+      </div>
+      <div>
+        <div class="card stat">
+          <div class="srow"><div><small data-t="todayL"></small><b id="sToday"></b></div><div><small data-t="streakL"></small><b id="sStreak"></b></div><div><small data-t="weekL"></small><b id="sWeek"></b></div></div>
+          <div class="goalb"><div class="gbar"><i id="gFill"></i></div><button class="lnk2" type="button" id="gSet"></button></div>
+          <div class="bars" id="sBars"></div>
+        </div>
+        <div class="card exams">
+          <div class="chd"><svg class="i"><use href="#cal"/></svg><b data-t="examsH"></b><button class="lnk2" type="button" id="exAdd" data-t="add2"></button></div>
+          <div id="exList"></div>
+        </div>
+      </div>
+      <div class="card todo">
+        <div class="chd"><svg class="i"><use href="#todoic"/></svg><b data-t="todoH"></b><span class="n" id="tdN"></span></div>
+        <form class="tdin" id="tdForm"><input id="tdIn" autocomplete="off"><button class="btn p" type="submit"><svg><use href="#plus"/></svg></button></form>
+        <div id="tdList"></div>
+      </div>
+      <div class="card mynotes">
+        <div class="chd"><svg class="i"><use href="#note"/></svg><b data-t="myNotesH"></b><span class="n" id="mnN"></span></div>
+        <div id="mnList"></div>
+      </div>
+    </div>
+  </section>
 
   <section class="view" id="v-lib">
     <div class="hero" id="hero">
@@ -571,12 +715,13 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
         <div class="row"><span class="ic2"><svg class="i"><use href="#tg"/></svg></span><div class="tx"><span data-t="sup"></span><small dir="ltr" style="text-align:start">@itamirabbas</small></div><a class="btn s" href="https://t.me/itamirabbas" target="_blank" rel="noopener" data-t="msg"></a></div>
       </div>
     </div>
-    <div class="foot"><span id="au2"></span><br>StudyNote · <span dir="ltr">v569bd6bac5</span></div>
+    <div class="foot"><span id="au2"></span><br>StudyNote · <span dir="ltr">vbde6db3257</span></div>
   </section>
 </main>
 
 <nav class="tabbar" id="tabs">
   <button type="button" data-v="home"><svg><use href="#home"/></svg><span data-t="tHome"></span></button>
+  <button type="button" data-v="study"><svg><use href="#timer"/></svg><span data-t="tStudy"></span></button>
   <button type="button" data-v="store"><svg><use href="#bag"/></svg><span data-t="tStore"></span></button>
   <button type="button" data-v="lib"><svg><use href="#shelf"/></svg><span data-t="tLib"></span></button>
   <button type="button" data-v="me"><svg><use href="#user"/></svg><span data-t="tMe"></span></button>
@@ -592,7 +737,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 <script>
 (function () {
   'use strict';
-  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), CONTENT0 = {"v":2,"news":[{"id":"n-2026-11-09-fa","lang":"fa","date":"2026-11-09","pin":true,"title":"StudyNote راه افتاد 🎉","body":"جزوه‌های شیمی آلی ۱ و ۲ حالا روی آیفون، آیپد، اندروید و کامپیوتر باز می‌شوند.\nاز بخش «جزوه‌ها» فصل نمونه‌ی رایگان را ببین و برای خرید دکمه‌ی «خرید» را بزن."},{"id":"n-2026-11-09-en","lang":"en","date":"2026-11-09","pin":true,"title":"StudyNote is live 🎉","body":"Organic Chemistry 1 and 2 notes now open on iPhone, iPad, Android and computers.\nOpen a free sample chapter under “Notes”, and tap “Buy” to order."}],"books":[{"id":"o1","title":{"fa":"شیمی آلی ۱","en":"Organic Chemistry 1"},"sub":{"fa":"از نام‌گذاری تا کربوکسیلیک اسیدها — کامل و تصویری","en":"From nomenclature to carboxylic acids — complete and visual"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۱ با توضیح قدم‌به‌قدم مکانیسم‌ها، شکل‌های دقیق، کارت‌های ترفند و سؤال‌های امتحانی با جواب کامل؛ مناسب کلاس و شب امتحان.","en":"Complete Organic Chemistry 1 notes with step-by-step mechanisms, precise figures, trick cards and exam questions with full answers — for class and the night before the exam."},"editions":["fa","en"],"hours":{"fa":"24","en":"19"},"c1":"#083f37","c2":"#13917b","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری ترکیبات آلی","en":"Nomenclature"},{"fa":"isomer و stereochemistry","en":"Isomerism and stereochemistry"},{"fa":"conformation: Newman و chair","en":"Conformations"},{"fa":"resonance، tautomerism و orbital های π","en":"Resonance, tautomerism, π-orbitals"},{"fa":"alkane ها، alkene ها، alkyne ها و diene ها","en":"Alkanes, alkenes, alkynes, dienes"},{"fa":"ترکیبات aromatic","en":"Aromatic compounds"},{"fa":"alkyl halide ها: جانشینی و حذف","en":"Alkyl halides: SN1, SN2, E1, E2"},{"fa":"acidity، alcohol ها، phenol ها و ether ها","en":"Acidity, alcohols, phenols, ethers"},{"fa":"amine ها و نمک diazonium","en":"Amines and diazonium salts"},{"fa":"aldehyde ها، ketone ها و Grignard","en":"Aldehydes, ketones, Grignard"},{"fa":"enol و enolate: aldol، Mannich، Claisen","en":"Enols and enolates"},{"fa":"carboxylic acid ها و مشتقات","en":"Carboxylic acids and derivatives"}],"extras":[{"fa":"نقشه‌ی بزرگ واکنش‌ها","en":"The reaction map"},{"fa":"دیکشنری واکنشگرها","en":"Reagent dictionary"},{"fa":"قاعده‌ها و ترتیب‌ها","en":"Rules and orderings"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"روش حل سؤال‌ها و اشتباه‌های رایج","en":"How to solve and common mistakes"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"نقشه‌ی تعاملی تبدیل‌ها","en":"Interactive conversion map"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-1-fa.html","label":"فصل ۱۲"},{"lang":"en","file":"samples/sample-3-en.html","label":"Ch. 12"}],"price":{"fa":"","en":""}},{"id":"o2","title":{"fa":"شیمی آلی ۲","en":"Organic Chemistry 2"},"sub":{"fa":"هتروسیکل‌ها، کربوهیدرات‌ها، آمینواسیدها و بیومولکول‌ها","en":"Heterocycles, carbohydrates, amino acids and biomolecules"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۲: هتروسیکل‌ها، قندها، پپتیدها، نوکلئیک اسیدها، لیپیدها، آلکالوئیدها و پلیمرها؛ با مکانیسم‌های مصور، کارت‌های قاعده و ترفند و آزمون شبیه‌سازی‌شده.","en":"Complete Organic Chemistry 2 notes: heterocycles, sugars, peptides, nucleic acids, lipids, alkaloids and polymers — with illustrated mechanisms, rule and trick cards and a simulated exam."},"editions":["fa","en"],"hours":{"fa":"15","en":"12"},"c1":"#1d2b6b","c2":"#3a6fe0","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری heterocycle ها","en":"Heterocycle nomenclature"},{"fa":"heterocycle های پنج‌عضوی و سه‌عضوی","en":"Five- and three-membered heterocycles"},{"fa":"heterocycle های شش‌عضوی و حلقه‌های جوش‌خورده","en":"Six-membered and fused heterocycles"},{"fa":"carbohydrate ها","en":"Carbohydrates"},{"fa":"amino acid ها، peptide ها و پروتئین‌ها","en":"Amino acids, peptides and proteins"},{"fa":"nucleic acid ها، lipid ها، alkaloid ها و polymer ها","en":"Nucleic acids, lipids, alkaloids and polymers"}],"extras":[{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"همه‌ی کارت‌های قاعده","en":"All decision-rule cards"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-2-fa.html","label":"فصل ۶"},{"lang":"en","file":"samples/sample-4-en.html","label":"Ch. 6"}],"price":{"fa":"","en":""}}]}, AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = '569bd6bac5';
+  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), CONTENT0 = {"v":3,"news":[{"id":"n-2026-11-09-fa","lang":"fa","date":"2026-11-09","pin":true,"title":"StudyNote راه افتاد 🎉","body":"جزوه‌های شیمی آلی ۱ و ۲ حالا روی آیفون، آیپد، اندروید و کامپیوتر باز می‌شوند.\nاز بخش «جزوه‌ها» فصل نمونه‌ی رایگان را ببین و برای خرید دکمه‌ی «خرید» را بزن."},{"id":"n-2026-11-09-en","lang":"en","date":"2026-11-09","pin":true,"title":"StudyNote is live 🎉","body":"Organic Chemistry 1 and 2 notes now open on iPhone, iPad, Android and computers.\nOpen a free sample chapter under “Notes”, and tap “Buy” to order."}],"books":[{"id":"o1","title":{"fa":"شیمی آلی ۱","en":"Organic Chemistry 1"},"sub":{"fa":"از نام‌گذاری تا کربوکسیلیک اسیدها — کامل و تصویری","en":"From nomenclature to carboxylic acids — complete and visual"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۱ با توضیح قدم‌به‌قدم مکانیسم‌ها، شکل‌های دقیق، کارت‌های ترفند و سؤال‌های امتحانی با جواب کامل؛ مناسب کلاس و شب امتحان.","en":"Complete Organic Chemistry 1 notes with step-by-step mechanisms, precise figures, trick cards and exam questions with full answers — for class and the night before the exam."},"editions":["fa","en"],"hours":{"fa":"24","en":"19"},"c1":"#083f37","c2":"#13917b","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری ترکیبات آلی","en":"Nomenclature"},{"fa":"isomer و stereochemistry","en":"Isomerism and stereochemistry"},{"fa":"conformation: Newman و chair","en":"Conformations"},{"fa":"resonance، tautomerism و orbital های π","en":"Resonance, tautomerism, π-orbitals"},{"fa":"alkane ها، alkene ها، alkyne ها و diene ها","en":"Alkanes, alkenes, alkynes, dienes"},{"fa":"ترکیبات aromatic","en":"Aromatic compounds"},{"fa":"alkyl halide ها: جانشینی و حذف","en":"Alkyl halides: SN1, SN2, E1, E2"},{"fa":"acidity، alcohol ها، phenol ها و ether ها","en":"Acidity, alcohols, phenols, ethers"},{"fa":"amine ها و نمک diazonium","en":"Amines and diazonium salts"},{"fa":"aldehyde ها، ketone ها و Grignard","en":"Aldehydes, ketones, Grignard"},{"fa":"enol و enolate: aldol، Mannich، Claisen","en":"Enols and enolates"},{"fa":"carboxylic acid ها و مشتقات","en":"Carboxylic acids and derivatives"}],"extras":[{"fa":"نقشه‌ی بزرگ واکنش‌ها","en":"The reaction map"},{"fa":"دیکشنری واکنشگرها","en":"Reagent dictionary"},{"fa":"قاعده‌ها و ترتیب‌ها","en":"Rules and orderings"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"روش حل سؤال‌ها و اشتباه‌های رایج","en":"How to solve and common mistakes"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"نقشه‌ی تعاملی تبدیل‌ها","en":"Interactive conversion map"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-1-fa.html","label":"فصل ۱۲"},{"lang":"en","file":"samples/sample-3-en.html","label":"Ch. 12"}],"price":{"fa":"","en":""},"key":"organic1"},{"id":"o2","title":{"fa":"شیمی آلی ۲","en":"Organic Chemistry 2"},"sub":{"fa":"هتروسیکل‌ها، کربوهیدرات‌ها، آمینواسیدها و بیومولکول‌ها","en":"Heterocycles, carbohydrates, amino acids and biomolecules"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۲: هتروسیکل‌ها، قندها، پپتیدها، نوکلئیک اسیدها، لیپیدها، آلکالوئیدها و پلیمرها؛ با مکانیسم‌های مصور، کارت‌های قاعده و ترفند و آزمون شبیه‌سازی‌شده.","en":"Complete Organic Chemistry 2 notes: heterocycles, sugars, peptides, nucleic acids, lipids, alkaloids and polymers — with illustrated mechanisms, rule and trick cards and a simulated exam."},"editions":["fa","en"],"hours":{"fa":"15","en":"12"},"c1":"#1d2b6b","c2":"#3a6fe0","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری heterocycle ها","en":"Heterocycle nomenclature"},{"fa":"heterocycle های پنج‌عضوی و سه‌عضوی","en":"Five- and three-membered heterocycles"},{"fa":"heterocycle های شش‌عضوی و حلقه‌های جوش‌خورده","en":"Six-membered and fused heterocycles"},{"fa":"carbohydrate ها","en":"Carbohydrates"},{"fa":"amino acid ها، peptide ها و پروتئین‌ها","en":"Amino acids, peptides and proteins"},{"fa":"nucleic acid ها، lipid ها، alkaloid ها و polymer ها","en":"Nucleic acids, lipids, alkaloids and polymers"}],"extras":[{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"همه‌ی کارت‌های قاعده","en":"All decision-rule cards"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-2-fa.html","label":"فصل ۶"},{"lang":"en","file":"samples/sample-4-en.html","label":"Ch. 6"}],"price":{"fa":"","en":""},"key":"organic2"}],"samples":[]}, AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = 'bde6db3257';
   var $ = function (id) { return document.getElementById(id); };
   function b64(s) { var x = atob(s), o = new Uint8Array(x.length); for (var i = 0; i < x.length; i++) o[i] = x.charCodeAt(i); return o; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -670,7 +815,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
       offline: 'Opening a sample needs the internet once.', store: 'The browser does not allow storing data. Leave private mode.'
     }
   };
-  var L = ls('jzr:lang') || 'fa';
+  var L = ls('jzr:lang') || 'en';
   function U(k) { return T[L][k] || T.fa[k] || ''; }
 
   /* ── storage: meta + text kept apart so the library loads fast ── */
@@ -775,11 +920,11 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   var T2 = {
     fa: {
       tHome: 'خانه', tStore: 'جزوه‌ها', tLib: 'کتابخانه', tMe: 'من',
-      hello0: 'به StudyNote خوش آمدی', helloN: 'سلام {n} 👋', helloP: 'جزوه‌های قفل‌دار، نمونه‌های رایگان و تازه‌ترین اطلاعیه‌ها، همه یک‌جا؛ روی گوشی، تبلت و کامپیوتر.',
+      hello0: 'خوش آمدید', helloN: 'سلام، {n}', helloP: '',
       myNotes: 'جزوه‌های من', seeBooks: 'دیدن جزوه‌ها', newsH: 'اطلاعیه‌ها', noNews: 'فعلاً اطلاعیه‌ی تازه‌ای نیست.', isNew: 'تازه', pinned: 'مهم',
       contH: 'ادامه‌ی مطالعه', contB: 'باز کن',
-      onbH: 'شروع در ۳ قدم', o1: 'StudyNote را روی صفحه‌ی اصلی نصب کن.', o2: 'از بخش «جزوه‌ها» نمونه را ببین و جزوه را بخر؛ فایل «دریافت کد» را می‌گیری.', o3: 'فایل را در «کتابخانه» اضافه کن، پیامش را بفرست، بعد جزوه و کد فعال‌سازی را اضافه کن.',
-      storeH: 'جزوه‌ها', storeNote: 'هر جزوه مخصوص خودت ساخته می‌شود، به گوشی یا کامپیوترت قفل است و بعد از فعال‌سازی بدون اینترنت هم باز می‌شود.',
+      onbH: 'شروع در ۳ قدم', o1: 'StudyNote را روی صفحه‌ی اصلی نصب کن.', o2: 'از بخش «جزوه‌ها» جزوه را سفارش بده؛ فایل «دریافت کد» را دریافت می‌کنی.', o3: 'فایل را در «کتابخانه» اضافه کن، پیامش را بفرست، بعد جزوه و کد فعال‌سازی را اضافه کن.',
+      storeH: 'جزوه‌ها', storeNote: 'هر نسخه برای خریدار و دستگاه او صادر می‌شود و پس از فعال‌سازی بدون اینترنت باز می‌شود.',
       sample: 'نمونه‌ی رایگان', buy: 'خرید', toc: 'فهرست فصل‌ها', extras: 'بخش‌های مرور و تمرین', chap: 'فصل', hrs: 'ساعت مطالعه', both: 'فارسی و انگلیسی', faEd: 'فارسی', enEd: 'انگلیسی',
       buyH: 'خرید', buyP: 'نسخه را انتخاب کن. پیام خرید کپی می‌شود؛ در تلگرام برای فروشنده بچسبان و بفرست.', ed: 'نسخه', copyGo: 'کپی پیام و رفتن به تلگرام', copied: 'پیام کپی شد؛ در تلگرام بچسبان و بفرست.', copyFail: 'کپی نشد؛ پیام را خودت بنویس.',
       buyMsg: 'سلام، می‌خواهم «{b}» (نسخه‌ی {e}) را بخرم.{x}', nameL: 'نام', tgL: 'آیدی تلگرام', uniL: 'دانشگاه',
@@ -787,16 +932,16 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
       profNote: 'این اطلاعات فقط روی همین دستگاه می‌ماند و جایی فرستاده نمی‌شود؛ برای نوشتن خودکار پیام خرید استفاده می‌شود.',
       rLang: 'زبان', rInst: 'نصب روی صفحه‌ی اصلی', how: 'راهنما', rUpd: 'به‌روزرسانی', check: 'بررسی', upToDate: 'StudyNote به‌روز است.', updating: 'نسخه‌ی تازه دریافت شد…', offlineU: 'برای بررسی به‌روزرسانی اینترنت لازم است.',
       rStore: 'ذخیره‌سازی', perY: 'دائمی — مرورگر فایل‌ها را پاک نمی‌کند', perN: 'عادی', instY: 'نصب شده ✓', instN: 'هنوز نصب نشده', msg: 'پیام',
-      ver: 'نسخه', lTag: 'جزوه‌های شیمی آلی، همیشه همراهت؛ روی گوشی، تبلت و کامپیوتر.', lf1: 'نصب در چند ثانیه', lf1s: 'بدون اپ‌استور و بدون حجم زیاد', lf2: 'کار بدون اینترنت', lf2s: 'بعد از نصب، جزوه‌ها همیشه در دسترس‌اند', lf3: 'نمونه‌ی رایگان', lf3s: 'قبل از خرید، یک فصل کامل را ببین', lf4: 'امن و شخصی', lf4s: 'هر جزوه فقط روی دستگاه خودت باز می‌شود', lInst: 'نصب StudyNote', lInsIos: 'آیفون و آیپد · با Safari، سه لمس', lInsAnd: 'یک لمس · رایگان', lInsDesk: 'روی Chrome یا Edge · رایگان', lInsOther: 'رایگان', lWeb: 'فعلاً بدون نصب، در مرورگر ادامه بده', lWebIos: 'ادامه در مرورگر (در آیفون توصیه نمی‌شود)', ob1H: 'جزوه‌ی مخصوص خودت', ob1P: 'هر جزوه با اسم خودت ساخته می‌شود و فقط روی همین دستگاه باز می‌شود؛ امن و بدون نیاز به اینترنت.', ob2H: 'اول ببین، بعد بخر', ob2P: 'از بخش «جزوه‌ها» فصل نمونه‌ی رایگان را بخوان؛ خرید با یک لمس از طریق تلگرام انجام می‌شود.', ob3H: 'همه‌چیز در یک جا', ob3P: 'جستجو، یادداشت، نشانه‌گذاری، انیمیشن مکانیسم‌ها و اطلاعیه‌های تازه؛ همه داخل StudyNote.', ob4H: 'خودت را معرفی کن', ob4P: 'برای نوشتن خودکار پیام خرید؛ فقط روی همین دستگاه می‌ماند. می‌توانی رد شوی.', skip2: 'رد شدن', next: 'بعدی', start: 'شروع', instApp: 'نصب برنامه', instCH: 'StudyNote را نصب کن', instCP: 'با یک لمس روی صفحه‌ی اصلی؛ سریع‌تر و بدون اینترنت.', instNow: 'نصب', showMe: 'نشانم بده', gotIt: 'فهمیدم', igIosP: 'اپل نصب خودکار را اجازه نمی‌دهد؛ فقط همین سه لمس:', igIosArrow: 'دکمه‌ی Share همین پایین است ↓', igOther: 'در منوی مرورگر گزینه‌ی «Install app» یا «Add to Home screen» را بزن.', igNotSafari: 'در آیفون نصب فقط از Safari یا Chrome جدید ممکن است. اگر این صفحه داخل تلگرام یا برنامه‌ی دیگری باز شده، اول «Open in Safari» را بزن.', installed: 'نصب شد ✓ از صفحه‌ی اصلی بازش کن.', newsS: 'اطلاعیه‌ها', seeAll: 'همه', supT: 'پشتیبانی در تلگرام', rLangS: 'فقط جزوه‌ها و مطالب همین زبان نمایش داده می‌شود', details: 'جزئیات', about: 'درباره‌ی جزوه', feats: 'ویژگی‌ها',
+      ver: 'نسخه', tStudy: 'مطالعه', samplesH: 'نمونه‌های رایگان', samplesS: 'نمونه‌ها', samplesP: 'فصل‌های نمونه‌ی جزوه‌ها؛ کامل و بدون نیاز به فعال‌سازی.', noSmp: 'نمونه‌ای برای این زبان منتشر نشده است.', soonL: 'به‌زودی', fullAv: 'نسخه‌ی کامل موجود است', focusS: 'تمرکز', focusH: 'تایمر تمرکز', fFocus: 'تمرکز', fBreak: 'استراحت', fDone: 'جلسه‌ی تمرکز تمام شد؛ کمی استراحت کن.', fBreakDone: 'استراحت تمام شد؛ آماده‌ی جلسه‌ی بعد.', sessions: 'جلسه', todayL: 'امروز', streakL: 'روز پیاپی', weekL: 'این هفته', goalT: 'هدف روزانه: {g} دقیقه', goalQ: 'هدف مطالعه‌ی روزانه (دقیقه)', examsH: 'امتحان‌ها', add2: '+ افزودن', exName: 'نام درس یا امتحان', exDate: 'تاریخ امتحان', noEx: 'تاریخ امتحان‌هایت را اضافه کن تا روزشمار داشته باشی.', dLeft: 'روز', dToday: 'امروز', dPast: 'گذشت', todoH: 'کارهای درسی', tdPh: 'مثلاً: مرور فصل ۷', noTd: 'فهرست کارهای امروزت را این‌جا بنویس.', myNotesH: 'یادداشت‌های من', noMn: 'یادداشت‌هایی که داخل جزوه‌ها می‌نویسی این‌جا جمع می‌شود.', mUnit: 'دقیقه', hUnit: 'ساعت', todayH: 'مطالعه‌ی امروز', todayS: '{m} از {g} دقیقه', ok2: 'ثبت', lTag: 'جزوه‌های شیمی آلی', lf1: 'نصب در چند ثانیه', lf1s: 'بدون اپ‌استور و بدون حجم زیاد', lf2: 'کار بدون اینترنت', lf2s: 'بعد از نصب، جزوه‌ها همیشه در دسترس‌اند', lf3: 'نمونه‌ی رایگان', lf3s: 'قبل از خرید، یک فصل کامل را ببین', lf4: 'امن و شخصی', lf4s: 'هر جزوه فقط روی دستگاه خودت باز می‌شود', lInst: 'نصب StudyNote', lInsIos: 'iPhone · iPad', lInsAnd: 'Android', lInsDesk: 'Windows · macOS · Linux', lInsOther: '', lWeb: 'ادامه در مرورگر', lWebIos: 'ادامه در مرورگر', ob1H: 'جزوه‌ی مخصوص خودت', ob1P: 'هر جزوه با اسم خودت ساخته می‌شود و فقط روی همین دستگاه باز می‌شود؛ امن و بدون نیاز به اینترنت.', ob2H: 'اول ببین، بعد بخر', ob2P: 'از بخش «جزوه‌ها» فصل نمونه‌ی رایگان را بخوان؛ خرید با یک لمس از طریق تلگرام انجام می‌شود.', ob3H: 'همه‌چیز در یک جا', ob3P: 'جستجو، یادداشت، نشانه‌گذاری، انیمیشن مکانیسم‌ها و اطلاعیه‌های تازه؛ همه داخل StudyNote.', ob4H: 'حساب کاربری', ob4P: 'نام و آیدی تلگرام — اختیاری؛ فقط روی همین دستگاه ذخیره می‌شود.', skip2: 'رد شدن', next: 'بعدی', start: 'ورود', instApp: 'نصب برنامه', instCH: 'StudyNote را نصب کن', instCP: 'افزودن به صفحه‌ی اصلی دستگاه', instNow: 'نصب', showMe: 'نشانم بده', gotIt: 'فهمیدم', igIosP: 'اپل نصب خودکار را اجازه نمی‌دهد؛ فقط همین سه لمس:', igIosArrow: 'دکمه‌ی Share همین پایین است ↓', igOther: 'در منوی مرورگر گزینه‌ی «Install app» یا «Add to Home screen» را بزن.', igNotSafari: 'در آیفون نصب فقط از Safari یا Chrome جدید ممکن است. اگر این صفحه داخل تلگرام یا برنامه‌ی دیگری باز شده، اول «Open in Safari» را بزن.', installed: 'نصب شد ✓ از صفحه‌ی اصلی بازش کن.', newsS: 'اطلاعیه‌ها', seeAll: 'همه', supT: 'پشتیبانی در تلگرام', rLangS: 'فقط جزوه‌ها و مطالب همین زبان نمایش داده می‌شود', details: 'جزئیات', about: 'درباره‌ی جزوه', feats: 'ویژگی‌ها',
       hidOther: '{n} فایل به زبان انگلیسی هم داری؛ برای دیدنش زبان را عوض کن.', switchL: 'تغییر زبان', noBooks: 'به‌زودی جزوه‌های این زبان این‌جا می‌آید.', guest: 'مهمان', setProf: 'برای تکمیل حساب بزن'
     },
     en: {
       tHome: 'Home', tStore: 'Notes', tLib: 'Library', tMe: 'Me',
-      hello0: 'Welcome to StudyNote', helloN: 'Hi {n} 👋', helloP: 'Your locked notes, free samples and the latest announcements — all in one place, on phone, tablet and computer.',
+      hello0: 'Welcome', helloN: 'Hello, {n}', helloP: '',
       myNotes: 'My notes', seeBooks: 'Browse notes', newsH: 'Announcements', noNews: 'No new announcements right now.', isNew: 'New', pinned: 'Important',
       contH: 'Continue reading', contB: 'Open',
-      onbH: 'Get started in 3 steps', o1: 'Add StudyNote to your Home Screen.', o2: 'Check a free sample under “Notes” and buy; you receive a “device code” file.', o3: 'Add that file in “Library”, send its message, then add the notes and the activation code.',
-      storeH: 'Study notes', storeNote: 'Every copy is made for you, locked to your phone or computer, and opens offline after activation.',
+      onbH: 'Get started in 3 steps', o1: 'Add StudyNote to your Home Screen.', o2: 'Order your notes under “Notes”; you will receive a “device code” file.', o3: 'Add that file in “Library”, send its message, then add the notes and the activation code.',
+      storeH: 'Study notes', storeNote: 'Each copy is issued to its buyer and device, and opens offline after activation.',
       sample: 'Free sample', buy: 'Buy', toc: 'Chapters', extras: 'Review & practice sections', chap: 'chapters', hrs: 'hours of study', both: 'Persian & English', faEd: 'Persian', enEd: 'English',
       buyH: 'Buy', buyP: 'Choose the edition. The order message is copied — paste it to the seller in Telegram and send.', ed: 'Edition', copyGo: 'Copy message & open Telegram', copied: 'Message copied — paste it in Telegram and send.', copyFail: 'Could not copy — please type the message yourself.',
       buyMsg: 'Hi, I would like to buy “{b}” ({e} edition).{x}', nameL: 'Name', tgL: 'Telegram ID', uniL: 'University',
@@ -804,7 +949,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
       profNote: 'This stays on this device only and is never sent anywhere; it is used to fill in your order message.',
       rLang: 'Language', rInst: 'Add to Home Screen', how: 'How', rUpd: 'Updates', check: 'Check', upToDate: 'StudyNote is up to date.', updating: 'New version received…', offlineU: 'Checking for updates needs the internet.',
       rStore: 'Storage', perY: 'Persistent — the browser keeps your files', perN: 'Standard', instY: 'Installed ✓', instN: 'Not installed yet', msg: 'Message',
-      ver: 'Version', lTag: 'Organic chemistry notes that go wherever you go — on phone, tablet and computer.', lf1: 'Installs in seconds', lf1s: 'No app store, tiny download', lf2: 'Works offline', lf2s: 'Once installed, your notes are always there', lf3: 'Free samples', lf3s: 'Read a full chapter before you buy', lf4: 'Safe and personal', lf4s: 'Each copy opens only on your own device', lInst: 'Install StudyNote', lInsIos: 'iPhone & iPad · three taps in Safari', lInsAnd: 'One tap · free', lInsDesk: 'In Chrome or Edge · free', lInsOther: 'Free', lWeb: 'Continue in the browser for now', lWebIos: 'Continue in the browser (not recommended on iPhone)', ob1H: 'Notes made just for you', ob1P: 'Every copy carries your name and opens only on this device — secure, and no internet needed.', ob2H: 'Try first, then buy', ob2P: 'Read a free sample chapter under “Notes”; buying takes one tap through Telegram.', ob3H: 'Everything in one place', ob3P: 'Search, notes, bookmarks, animated mechanisms and the latest announcements — all inside StudyNote.', ob4H: 'Introduce yourself', ob4P: 'Used to fill in your order message; it stays on this device. You can skip this.', skip2: 'Skip', next: 'Next', start: 'Start', instApp: 'Install app', instCH: 'Install StudyNote', instCP: 'One tap to your Home Screen — faster and works offline.', instNow: 'Install', showMe: 'Show me', gotIt: 'Got it', igIosP: 'Apple doesn’t allow automatic install — it takes just three taps:', igIosArrow: 'The Share button is right below ↓', igOther: 'In the browser menu, tap “Install app” or “Add to Home screen”.', igNotSafari: 'On iPhone you can install only from Safari (or a recent Chrome). If this page opened inside Telegram or another app, tap “Open in Safari” first.', installed: 'Installed ✓ Open it from your Home Screen.', newsS: 'News', seeAll: 'See all', supT: 'Support on Telegram', rLangS: 'Only notes and content in this language are shown', details: 'Details', about: 'About these notes', feats: 'Features',
+      ver: 'Version', tStudy: 'Study', samplesH: 'Free samples', samplesS: 'Samples', samplesP: 'Sample chapters from the notes — complete, no activation needed.', noSmp: 'No samples have been published in this language yet.', soonL: 'Coming soon', fullAv: 'Full edition available', focusS: 'Focus', focusH: 'Focus timer', fFocus: 'Focus', fBreak: 'Break', fDone: 'Focus session done — take a short break.', fBreakDone: 'Break over — ready for the next session.', sessions: 'sessions', todayL: 'Today', streakL: 'Day streak', weekL: 'This week', goalT: 'Daily goal: {g} min', goalQ: 'Daily study goal (minutes)', examsH: 'Exams', add2: '+ Add', exName: 'Course or exam', exDate: 'Exam date', noEx: 'Add your exam dates to get a countdown.', dLeft: 'days', dToday: 'Today', dPast: 'Past', todoH: 'Study to-do', tdPh: 'e.g. Review chapter 7', noTd: 'Write today’s study tasks here.', myNotesH: 'My notes', noMn: 'Notes you write inside the notes files appear here.', mUnit: 'min', hUnit: 'h', todayH: 'Today’s study', todayS: '{m} of {g} min', ok2: 'Save', lTag: 'Organic Chemistry Notes', lf1: 'Installs in seconds', lf1s: 'No app store, tiny download', lf2: 'Works offline', lf2s: 'Once installed, your notes are always there', lf3: 'Free samples', lf3s: 'Read a full chapter before you buy', lf4: 'Safe and personal', lf4s: 'Each copy opens only on your own device', lInst: 'Install StudyNote', lInsIos: 'iPhone · iPad', lInsAnd: 'Android', lInsDesk: 'Windows · macOS · Linux', lInsOther: '', lWeb: 'Continue in browser', lWebIos: 'Continue in browser', ob1H: 'Notes made just for you', ob1P: 'Every copy carries your name and opens only on this device — secure, and no internet needed.', ob2H: 'Try first, then buy', ob2P: 'Read a free sample chapter under “Notes”; buying takes one tap through Telegram.', ob3H: 'Everything in one place', ob3P: 'Search, notes, bookmarks, animated mechanisms and the latest announcements — all inside StudyNote.', ob4H: 'Your account', ob4P: 'Name and Telegram ID — optional; stored only on this device.', skip2: 'Skip', next: 'Next', start: 'Continue', instApp: 'Install app', instCH: 'Install StudyNote', instCP: 'Add to your device’s Home Screen', instNow: 'Install', showMe: 'Show me', gotIt: 'Got it', igIosP: 'Apple doesn’t allow automatic install — it takes just three taps:', igIosArrow: 'The Share button is right below ↓', igOther: 'In the browser menu, tap “Install app” or “Add to Home screen”.', igNotSafari: 'On iPhone you can install only from Safari (or a recent Chrome). If this page opened inside Telegram or another app, tap “Open in Safari” first.', installed: 'Installed ✓ Open it from your Home Screen.', newsS: 'News', seeAll: 'See all', supT: 'Support on Telegram', rLangS: 'Only notes and content in this language are shown', details: 'Details', about: 'About these notes', feats: 'Features',
       hidOther: 'You also have {n} file(s) in Persian — switch the language to see them.', switchL: 'Switch language', noBooks: 'Notes in this language are coming soon.', guest: 'Guest', setProf: 'Tap to set up your account'
     }
   };
@@ -830,9 +975,9 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   function fileOk(m) { return m.kind === 'getter' || (m.lang || 'fa') === L; }
 
   /* ── navigation: top views (tab bar / menu) and sub-pages with a back button ── */
-  var TOPV = ['home', 'store', 'lib', 'me'], ALLV = ['home', 'store', 'book', 'lib', 'news', 'help', 'me'];
+  var TOPV = ['home', 'study', 'store', 'lib', 'me'], ALLV = ['home', 'study', 'store', 'samples', 'book', 'lib', 'news', 'help', 'me'];
   var VIEW = 'home', CUR = null, DEPTH = 0;
-  function titleOf(v) { return { store: U('tStore'), book: CUR ? tr(CUR.title) : '', lib: U('tLib'), news: U('newsH'), help: U('helpH'), me: U('tMe') }[v] || ''; }
+  function titleOf(v) { return { study: U('tStudy'), samples: U('samplesH'), store: U('tStore'), book: CUR ? tr(CUR.title) : '', lib: U('tLib'), news: U('newsH'), help: U('helpH'), me: U('tMe') }[v] || ''; }
   function show(v, arg, mode) { // mode: 'push' (default), 'replace', 'pop'
     if (ALLV.indexOf(v) < 0) v = 'home';
     if (v === 'book') { CUR = (CONTENT.books || []).filter(function (b) { return b.id === arg; })[0] || null; if (!CUR || !bookOk(CUR)) v = 'store'; }
@@ -850,6 +995,8 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
     if (v === 'news') { renderNews(); setTimeout(markSeen, 600); }
     if (v === 'book') renderBook();
     if (v === 'me') renderMe();
+    if (v === 'study') renderStudy();
+    if (v === 'samples') renderSamples();
   }
   function fromHash() { var h = (location.hash || '#home').slice(1).split(':'); return { v: h[0], a: h[1] }; }
   window.addEventListener('popstate', function (e) { if (!$('v-home')) return; DEPTH = (e.state && e.state.d) || 0; var r = fromHash(); show(r.v, r.a, 'pop'); });
@@ -878,7 +1025,8 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   /* ── home ── */
   function renderHome() {
     var p = prof(); $('hello').textContent = p.name ? U('helloN').replace('{n}', p.name.split(' ')[0]) : U('hello0');
-    $('hnews').innerHTML = newsHtml(newsList().slice(0, 3)); badge();
+    try { $('today').textContent = new Intl.DateTimeFormat(L === 'fa' ? 'fa-IR-u-ca-persian' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()); } catch (e) { $('today').textContent = ''; }
+    $('hnews').innerHTML = newsHtml(newsList().slice(0, 3)); badge(); renderToday();
     var bs = (CONTENT.books || []).filter(bookOk);
     $('hbooks').innerHTML = bs.length ? bs.map(function (b) { return '<div class="card mini" data-book="' + esc(b.id) + '"><div class="cover" style="background:linear-gradient(135deg,' + esc(b.c1 || '#083f37') + ',' + esc(b.c2 || '#13917b') + ')"><h3>' + esc(tr(b.title)) + '</h3><p>' + esc(tr(b.sub)) + '</p></div><div class="mb"><span>' + num((b.chapters || []).length) + ' ' + esc(U('chap')) + (b.hours ? ' · ' + num(tr(b.hours)) + ' ' + esc(U('hrs')) : '') + '</span><span class="go">' + esc(U('details')) + '</span></div></div>'; }).join('') : '<div class="empty" style="flex:1">' + esc(U('noBooks')) + '</div>';
     var last = ls('jzr:last');
@@ -945,6 +1093,133 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   function fallbackCopy(t) { try { var a = document.createElement('textarea'); a.value = t; a.setAttribute('readonly', ''); a.style.position = 'fixed'; a.style.opacity = '0'; document.body.appendChild(a); a.select(); a.setSelectionRange(0, t.length); var ok = document.execCommand('copy'); a.remove(); return ok; } catch (e) { return false; } }
   var CONTACT_URL = 'https://t.me/itamirabbas';
 
+
+  /* ── study: reading time (from the notes files) + focus timer, goal, streak, exams, to-do, my notes ── */
+  function jget(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
+  function jset(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function dk(d) { d = d || new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function daySecs() { // all study seconds per day: reading inside the notes + focus timer
+    var out = {}, add = function (o) { for (var k in o) out[k] = (out[k] || 0) + (+o[k] || 0); };
+    try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k && k.indexOf('jz:st:') === 0) add(jget(k, {})); } } catch (e) {}
+    add(jget('jzr:focus', {})); return out;
+  }
+  function goal() { return Math.max(5, +ls('jzr:goal') || 60); }
+  function stats() {
+    var S = daySecs(), today = Math.round((S[dk()] || 0) / 60), d = new Date(), streak = 0, week = 0, days = [];
+    if ((S[dk(d)] || 0) < 300) d.setDate(d.getDate() - 1);
+    while ((S[dk(d)] || 0) >= 300) { streak++; d.setDate(d.getDate() - 1); }
+    for (var i = 6; i >= 0; i--) { var x = new Date(); x.setDate(x.getDate() - i); var m = Math.round((S[dk(x)] || 0) / 60); week += m; days.push({ d: x, m: m }); }
+    return { today: today, streak: streak, week: week, days: days };
+  }
+  function fmtMin(m) { return m >= 60 ? num(Math.floor(m / 60)) + ' ' + U('hUnit') + (m % 60 ? ' ' + num(m % 60) : '') : num(m) + ' ' + U('mUnit'); }
+  function renderToday() {
+    var el = $('todayC'); if (!el) return; var s = stats(), g = goal(), pct = Math.min(1, s.today / g);
+    el.innerHTML = '<div class="ring"><svg viewBox="0 0 56 56"><circle class="t0" cx="28" cy="28" r="24"/><circle class="t1" cx="28" cy="28" r="24" style="stroke-dashoffset:' + (150.8 * (1 - pct)).toFixed(1) + '"/></svg><b>' + num(Math.round(pct * 100)) + '٪'.replace('٪', L === 'fa' ? '٪' : '%') + '</b></div><div class="tx"><b>' + esc(U('todayH')) + '</b><small>' + esc(U('todayS').replace('{m}', num(s.today)).replace('{g}', num(g))) + '</small></div>' + (s.streak ? '<span class="fl2"><svg><use href="#flame"/></svg>' + num(s.streak) + '</span>' : '');
+  }
+  var PRESETS = [[25, 5], [50, 10], [90, 15]];
+  var TM = jget('jzr:timer', null) || { p: 0, mode: 'focus', left: 25 * 60, end: 0, last: 0, n: 0, day: dk() };
+  if (TM.day !== dk()) { TM.n = 0; TM.day = dk(); }
+  function tmSave() { jset('jzr:timer', TM); }
+  function tmDur() { return PRESETS[TM.p][TM.mode === 'focus' ? 0 : 1] * 60; }
+  function addFocus(sec) { if (sec <= 0) return; var F = jget('jzr:focus', {}); F[dk()] = (F[dk()] || 0) + sec; jset('jzr:focus', F); }
+  function beep() {
+    try { var A = window.AudioContext || window.webkitAudioContext; if (A) { var c = new A(); [0, .25, .5].forEach(function (t0) { var o = c.createOscillator(), g = c.createGain(); o.frequency.value = 880; g.gain.setValueAtTime(.0001, c.currentTime + t0); g.gain.exponentialRampToValueAtTime(.3, c.currentTime + t0 + .02); g.gain.exponentialRampToValueAtTime(.0001, c.currentTime + t0 + .2); o.connect(g); g.connect(c.destination); o.start(c.currentTime + t0); o.stop(c.currentTime + t0 + .22); }); } } catch (e) {}
+    try { if (navigator.vibrate) navigator.vibrate([200, 100, 200]); } catch (e) {}
+  }
+  function tmTick() {
+    if (TM.end) {
+      var now = Date.now(), stop = Math.min(now, TM.end);
+      if (TM.mode === 'focus' && TM.last) addFocus(Math.max(0, Math.round((stop - TM.last) / 1000)));
+      TM.last = stop; TM.left = Math.max(0, Math.round((TM.end - now) / 1000));
+      if (TM.left <= 0) {
+        TM.end = 0; TM.last = 0; beep();
+        if (TM.mode === 'focus') { TM.n++; TM.mode = 'break'; if ($('v-home')) toast(U('fDone')); } else { TM.mode = 'focus'; if ($('v-home')) toast(U('fBreakDone')); }
+        TM.left = tmDur();
+      }
+      tmSave();
+    }
+    tmDraw(); if (VIEW === 'study') renderStats(); if (VIEW === 'home') renderToday();
+  }
+  function tmDraw() {
+    if (!$('fTime')) return;
+    var m = Math.floor(TM.left / 60), s = TM.left % 60, tx = ('0' + m).slice(-2) + ':' + ('0' + s).slice(-2);
+    $('fTime').textContent = L === 'fa' ? num(tx) : tx;
+    $('fLbl').textContent = TM.mode === 'focus' ? U('fFocus') : U('fBreak');
+    $('fArc').style.strokeDashoffset = (326.7 * (1 - TM.left / tmDur())).toFixed(1);
+    $('fArc').parentNode.parentNode.classList.toggle('brk', TM.mode !== 'focus');
+    $('fGoI').innerHTML = '<use href="#' + (TM.end ? 'pause' : 'play') + '"/>';
+    $('fCount').textContent = TM.n ? '× ' + num(TM.n) : '';
+    $('fModes').innerHTML = PRESETS.map(function (p, i) { return '<button type="button" data-p="' + i + '" class="' + (i === TM.p ? 'on' : '') + '">' + num(p[0]) + '/' + num(p[1]) + '</button>'; }).join('');
+    if (TM.end) document.title = tx + ' · StudyNote'; else document.title = 'StudyNote';
+  }
+  setInterval(function () { if ($('v-home')) tmTick(); }, 1000);
+  $('fGo').onclick = function () {
+    if (TM.end) { tmTick(); TM.end = 0; TM.last = 0; } else { if (!TM.left) TM.left = tmDur(); TM.end = Date.now() + TM.left * 1000; TM.last = Date.now(); try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) {} }
+    tmSave(); tmDraw();
+  };
+  $('fReset').onclick = function () { if (TM.end) tmTick(); TM.end = 0; TM.last = 0; TM.mode = 'focus'; TM.left = tmDur(); tmSave(); tmDraw(); };
+  $('fModes').onclick = function (e) { var b = e.target.closest('[data-p]'); if (!b || TM.end) return; TM.p = +b.getAttribute('data-p'); TM.left = tmDur(); tmSave(); tmDraw(); };
+  function renderStats() {
+    var s = stats(), g = goal();
+    $('sToday').textContent = fmtMin(s.today); $('sStreak').textContent = num(s.streak); $('sWeek').textContent = fmtMin(s.week);
+    $('gFill').style.width = Math.min(100, s.today / g * 100) + '%'; $('gSet').textContent = U('goalT').replace('{g}', num(g));
+    var mx = Math.max(g, 1); s.days.forEach(function (x) { mx = Math.max(mx, x.m); });
+    var wd = function (d) { try { return new Intl.DateTimeFormat(L === 'fa' ? 'fa-IR' : 'en-GB', { weekday: 'narrow' }).format(d); } catch (e) { return ''; } };
+    $('sBars').innerHTML = s.days.map(function (x, i) { return '<div class="' + (i === 6 ? 'on' : '') + '" title="' + x.m + '"><i style="height:' + Math.max(4, Math.round(x.m / mx * 70)) + 'px"></i><span>' + esc(wd(x.d)) + '</span></div>'; }).join('');
+  }
+  $('gSet').onclick = function () {
+    sheet('<b class="t">' + esc(U('goalQ')) + '</b><div class="seg" id="gSeg">' + [30, 60, 90, 120, 180].map(function (m) { return '<button type="button" data-g="' + m + '" class="' + (m === goal() ? 'on' : '') + '">' + num(m) + '</button>'; }).join('') + '</div>', [[U('cancel')]]);
+    $('gSeg').onclick = function (e) { var b = e.target.closest('[data-g]'); if (!b) return; ls('jzr:goal', b.getAttribute('data-g')); $('ov').classList.remove('on'); renderStats(); renderToday(); };
+  };
+  function renderExams() {
+    var X = jget('jzr:exams', []), t0 = new Date(dk() + 'T00:00:00').getTime();
+    X.sort(function (a, b) { return a.date.localeCompare(b.date); });
+    $('exList').innerHTML = X.length ? X.map(function (x) {
+      var d = Math.round((new Date(x.date + 'T00:00:00').getTime() - t0) / 864e5);
+      var big = d > 0 ? num(d) : d === 0 ? '!' : '✓', sm = d > 0 ? U('dLeft') : d === 0 ? U('dToday') : U('dPast');
+      return '<div class="ex' + (d >= 0 && d <= 3 ? ' soon' : '') + '"><div class="dd"><b>' + big + '</b><small>' + esc(sm) + '</small></div><div class="tx"><b>' + esc(x.name) + '</b><small>' + fmtDate(x.date) + '</small></div><button class="xb" type="button" data-xe="' + esc(x.id) + '" aria-label="delete"><svg><use href="#trash"/></svg></button></div>';
+    }).join('') : '<div class="none">' + esc(U('noEx')) + '</div>';
+  }
+  $('exList').onclick = function (e) { var b = e.target.closest('[data-xe]'); if (!b) return; jset('jzr:exams', jget('jzr:exams', []).filter(function (x) { return x.id !== b.getAttribute('data-xe'); })); renderExams(); };
+  $('exAdd').onclick = function () {
+    sheet('<b class="t">' + esc(U('examsH')) + '</b><label class="f" style="margin-top:10px"><span>' + esc(U('exName')) + '</span><input id="exN"></label><label class="f" style="margin-top:10px"><span>' + esc(U('exDate')) + '</span><input id="exD" type="date" dir="ltr" min="' + dk() + '"></label>', [[U('ok2'), function () {
+      var n = ($('exN').value || '').trim(), d = $('exD').value; if (!n || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return;
+      var X = jget('jzr:exams', []); X.push({ id: String(Date.now()), name: n.slice(0, 60), date: d }); jset('jzr:exams', X); renderExams();
+    }, 'pri'], [U('cancel')]]);
+    setTimeout(function () { try { $('exN').focus(); } catch (e) {} }, 100);
+  };
+  function renderTodo() {
+    var D = jget('jzr:todo', []); D.sort(function (a, b) { return (a.d ? 1 : 0) - (b.d ? 1 : 0); });
+    var open = D.filter(function (x) { return !x.d; }).length; $('tdN').textContent = D.length ? '(' + num(open) + ')' : '';
+    $('tdList').innerHTML = D.length ? D.map(function (x) { return '<div class="td' + (x.d ? ' done' : '') + '"><button class="cb" type="button" data-tt="' + esc(x.id) + '" aria-label="done"><svg><use href="#check"/></svg></button><span>' + esc(x.x) + '</span><button class="xb" type="button" data-td="' + esc(x.id) + '" aria-label="delete"><svg><use href="#trash"/></svg></button></div>'; }).join('') : '<div class="none">' + esc(U('noTd')) + '</div>';
+  }
+  $('tdForm').onsubmit = function (e) { e.preventDefault(); var v = $('tdIn').value.trim(); if (!v) return; var D = jget('jzr:todo', []); D.unshift({ id: String(Date.now()), x: v.slice(0, 140), d: 0 }); jset('jzr:todo', D.slice(0, 200)); $('tdIn').value = ''; renderTodo(); };
+  $('tdList').onclick = function (e) {
+    var a = e.target.closest('[data-tt]'), r = e.target.closest('[data-td]'), D = jget('jzr:todo', []);
+    if (a) { D.forEach(function (x) { if (x.id === a.getAttribute('data-tt')) x.d = x.d ? 0 : 1; }); jset('jzr:todo', D); renderTodo(); }
+    if (r) { jset('jzr:todo', D.filter(function (x) { return x.id !== r.getAttribute('data-td'); })); renderTodo(); }
+  };
+  function renderMyNotes() {
+    var all = [], names = {}; (CONTENT.books || []).forEach(function (b) { if (b.key) names[b.key] = tr(b.title); });
+    try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k && k.indexOf('jz:nt:') === 0) { var bk = k.slice(6), N = jget(k, {}); for (var id in N) if (N[id] && N[id].x) all.push({ x: N[id].x, at: N[id].at || 0, b: names[bk] || bk }); } } } catch (e) {}
+    all.sort(function (a, b) { return b.at - a.at; });
+    $('mnN').textContent = all.length ? '(' + num(all.length) + ')' : '';
+    $('mnList').innerHTML = all.length ? all.slice(0, 60).map(function (n) { return '<div class="mn"><p>' + esc(n.x) + '</p><small><bdi>' + esc(n.b) + '</bdi>' + (n.at ? ' · ' + fmtDate(dk(new Date(n.at))) : '') + '</small></div>'; }).join('') : '<div class="none">' + esc(U('noMn')) + '</div>';
+  }
+  function renderStudy() { $('tdIn').placeholder = U('tdPh'); tmDraw(); renderStats(); renderExams(); renderTodo(); renderMyNotes(); }
+
+  /* ── samples: every published sample chapter in this language (books' samples + upcoming notes) ── */
+  function sampleItems() {
+    var out = [];
+    (CONTENT.books || []).forEach(function (b) { (b.samples || []).forEach(function (s) { if (s.lang === L) out.push({ title: tr(b.title), sub: tr(s.label) ? tr(s.label) + ' · ' + tr(b.sub) : tr(b.sub), file: s.file, c1: b.c1, c2: b.c2, book: b.id, tag: U('fullAv') }); }); });
+    (CONTENT.samples || []).forEach(function (s) { if ((s.lang || L) !== L || !(s.file || s.f)) return; out.push({ title: tr(s.title) || s.t || '', sub: tr(s.sub) || tr(s.label) || '', file: s.file || 'samples/' + s.f, c1: s.c1, c2: s.c2, tag: s.soon !== false ? U('soonL') : '', soon: true }); });
+    return out;
+  }
+  function renderSamples() {
+    var S = sampleItems();
+    $('slist').innerHTML = S.length ? S.map(function (s, i) { return '<div class="card smp" data-si="' + i + '"><div class="sc" style="background:linear-gradient(135deg,' + esc(s.c1 || '#7a3b0c') + ',' + esc(s.c2 || '#d98a1f') + ')"><svg><use href="#gift"/></svg></div><div class="sb"><b>' + esc(s.title) + '</b><small>' + esc(s.sub) + '</small>' + (s.tag ? '<span class="lb' + (s.soon ? ' new' : '') + '">' + esc(s.tag) + '</span>' : '') + '</div><span class="go2"><svg><use href="#chevr"/></svg></span></div>'; }).join('') : '<div class="empty2"><svg><use href="#gift"/></svg><p>' + esc(U('noSmp')) + '</p></div>';
+  }
+  $('slist').onclick = function (e) { var c = e.target.closest('[data-si]'); if (!c) return; var s = sampleItems()[+c.getAttribute('data-si')]; if (s) openSampleUrl(s.file, s.title + ' — ' + U('sample')); };
   /* ── library ── */
   function itemHtml(m) {
     var ic = m.kind === 'getter' ? 'phone' : 'book', kind = m.kind === 'getter' ? U('kGetter') : U('kBook');
@@ -1084,11 +1359,11 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   var CHIPS = { obA1: ['🔒', '✓'], obA2: ['🎁', 'Telegram'], obA3: ['🔍', '★'] };
   function landHtml() {
     var feats = [['dl', 'lf1'], ['shield', 'lf2'], ['gift', 'lf3'], ['book', 'lf4']];
-    $('lFeat').innerHTML = feats.map(function (f) { return '<div class="lf"><span class="fi"><svg><use href="#' + f[0] + '"/></svg></span><div><b>' + esc(U(f[1])) + '</b><small>' + esc(U(f[1] + 's')) + '</small></div></div>'; }).join('');
+    $('lFeat').innerHTML = '';
     $('lTag').textContent = U('lTag'); $('lInstT').textContent = U('lInst');
     $('lInstS').textContent = IOS ? U('lInsIos') : ANDROID ? U('lInsAnd') : deferred ? U('lInsDesk') : U('lInsOther');
     $('lWeb').textContent = IOS ? U('lWebIos') : U('lWeb');
-    $('lFoot').textContent = AUTH[L] || AUTH.fa;
+    $('lFoot').textContent = ''; $('lBy').textContent = AUTH[L] || AUTH.fa;
     [].forEach.call(document.querySelectorAll('[data-ll]'), function (b) { b.classList.toggle('on', b.getAttribute('data-ll') === L); });
     var de = document.documentElement; de.lang = L; de.dir = L === 'fa' ? 'rtl' : 'ltr';
   }
@@ -1100,14 +1375,14 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   var OB = 0, OBN = 5, obLangPicked = !!ls('jzr:lang');
   function obShow(n) {
     OB = n; [].forEach.call(document.querySelectorAll('.obs'), function (s) { s.classList.toggle('on', +s.getAttribute('data-s') === n); });
-    $('obDots').innerHTML = n === 0 ? '' : [1, 2, 3, 4].map(function (k) { return '<i class="' + (k === n ? 'on' : '') + '"></i>'; }).join('');
+    $('obDots').innerHTML = '';
     ['obA1', 'obA2', 'obA3'].forEach(function (id) { $(id).innerHTML = ART[id] + '<span class="chip2 c1">' + CHIPS[id][0] + '</span><span class="chip2 c2">' + CHIPS[id][1] + '</span>'; });
     $('obNext').parentNode.style.visibility = n === 0 ? 'hidden' : '';
     $('obNextT').textContent = n === OBN - 1 ? U('start') : U('next');
-    $('obSkip').style.visibility = n === OBN - 1 ? 'hidden' : '';
+    $('obSkip').style.visibility = '';
     if (n === 4) { var p = prof(); $('oName').value = p.name || ''; $('oTg').value = p.tg || ''; $('obAv').textContent = (p.name || 'S').charAt(0).toUpperCase(); }
   }
-  [].forEach.call(document.querySelectorAll('[data-pick]'), function (b) { b.onclick = function () { L = b.getAttribute('data-pick'); ls('jzr:lang', L); apply(); obShow(1); }; });
+  [].forEach.call(document.querySelectorAll('[data-pick]'), function (b) { b.onclick = function () { L = b.getAttribute('data-pick'); ls('jzr:lang', L); apply(); obShow(4); }; });
   $('oName').oninput = function () { $('obAv').textContent = (this.value.trim() || 'S').charAt(0).toUpperCase(); };
   function obDone() {
     var n = $('oName').value.trim(), tg = $('oTg').value.trim();
@@ -1115,10 +1390,10 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
     try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) {}
     ls('jzr:ob', '1'); $('ob').classList.remove('on'); boot();
   }
-  $('obNext').onclick = function () { if (OB >= OBN - 1) obDone(); else obShow(OB + 1); };
+  $('obNext').onclick = function () { obDone(); };
   $('obSkip').onclick = obDone;
   function afterLanding() {
-    if (!ls('jzr:lang') || !ls('jzr:ob')) { apply(); $('ob').classList.add('on'); obShow(ls('jzr:lang') ? 1 : 0); }
+    if (!ls('jzr:lang') || !ls('jzr:ob')) { apply(); $('ob').classList.add('on'); obShow(ls('jzr:lang') ? 4 : 0); }
     else boot();
   }
   var wantLanding = !STANDALONE && !ls('jzr:web');
