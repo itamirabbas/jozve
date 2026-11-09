@@ -211,7 +211,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 .btn .sl small { font-size: .74rem; font-weight: 700; opacity: .85; }
 .more2 svg { width: 16px; height: 16px; }
 [dir=rtl] .more2 svg { transform: scaleX(-1); }
-.ig { position: fixed; inset: 0; z-index: 70; background: radial-gradient(500px 300px at 85% -10%, rgba(111,224,198,.35), transparent 60%), linear-gradient(150deg, #062f29, #0b5d50 60%, #127f6c); color: #fff; display: none; padding: calc(24px + env(safe-area-inset-top)) 22px calc(120px + env(safe-area-inset-bottom)); overflow: auto; }
+.ig { position: fixed; inset: 0; z-index: 90; background: radial-gradient(500px 300px at 85% -10%, rgba(111,224,198,.35), transparent 60%), linear-gradient(150deg, #062f29, #0b5d50 60%, #127f6c); color: #fff; display: none; padding: calc(24px + env(safe-area-inset-top)) 22px calc(120px + env(safe-area-inset-bottom)); overflow: auto; }
 .ig.on { display: block; animation: fade .2s ease; }
 .ig-c { max-width: 420px; margin: 0 auto; }
 .ig-c img { width: 72px; height: 72px; border-radius: 20px; display: block; margin: 0 auto 10px; box-shadow: 0 16px 30px -12px rgba(0,0,0,.6); }
@@ -229,6 +229,92 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 .instcta .ic3 { width: 44px; height: 44px; border-radius: 14px; background: var(--gold-soft); color: var(--gold); display: grid; place-items: center; flex: none; }
 .instcta b { display: block; font-size: .95rem; } .instcta small { color: var(--muted); font-size: .78rem; display: block; line-height: 1.6; }
 .instcta .btn { margin-inline-start: auto; padding: 9px 14px; font-size: .88rem; white-space: nowrap; }
+
+/* ── landing (browser) & onboarding (first run) ── */
+.land, .ob { position: fixed; inset: 0; z-index: 80; display: none; overflow: auto; color: #fff; background: linear-gradient(160deg, #04241f 0%, #0a4d43 45%, #0f7a67 100%); }
+.land.on, .ob.on { display: block; }
+.orb { position: fixed; border-radius: 50%; filter: blur(60px); opacity: .55; pointer-events: none; animation: drift 14s ease-in-out infinite alternate; }
+.orb.o1 { width: 360px; height: 360px; background: #2fd3ae; top: -120px; inset-inline-end: -100px; }
+.orb.o2 { width: 300px; height: 300px; background: #3a6fe0; bottom: -120px; inset-inline-start: -110px; opacity: .35; animation-duration: 18s; }
+@keyframes drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(-30px, 40px) scale(1.15); } }
+.land-in { position: relative; z-index: 1; min-height: 100%; max-width: 460px; margin: 0 auto; padding: calc(16px + env(safe-area-inset-top)) 22px calc(24px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; }
+.ltop { display: flex; justify-content: flex-end; }
+.land .lang, .ob .lang { background: rgba(255,255,255,.14); }
+.land .lang button, .ob .lang button { color: rgba(255,255,255,.75); }
+.land .lang button.on { background: #fff; color: var(--g1); }
+.lhero { text-align: center; margin-top: 2vh; }
+.lico { position: relative; width: 128px; height: 128px; margin: 0 auto; }
+.lico img { position: relative; width: 128px; height: 128px; border-radius: 34px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.15); animation: pop .7s cubic-bezier(.2,1.4,.4,1); }
+.lico .ring { position: absolute; inset: -14px; border-radius: 46px; border: 2px solid rgba(111,224,198,.5); animation: pulse 2.4s ease-out infinite; }
+@keyframes pulse { 0% { transform: scale(.9); opacity: .9; } 100% { transform: scale(1.25); opacity: 0; } }
+.lhero h1 { margin: 22px 0 6px; font-size: 2.6rem; font-weight: 900; letter-spacing: .5px; direction: ltr; background: linear-gradient(90deg, #fff, #b8f5e4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lhero .ltag { margin: 0 auto; max-width: 340px; font-size: 1rem; opacity: .88; line-height: 1.9; }
+.lfeat { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 3.5vh 0 3vh; }
+.lf { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 12px 14px; animation: rise .5s both; }
+.lf:nth-child(2) { animation-delay: .08s; } .lf:nth-child(3) { animation-delay: .16s; } .lf:nth-child(4) { animation-delay: .24s; }
+.lf .fi { width: 42px; height: 42px; border-radius: 13px; background: rgba(255,255,255,.14); display: grid; place-items: center; flex: none; }
+.lf .fi svg { width: 22px; height: 22px; }
+.lf b { display: block; font-size: .95rem; } .lf small { display: block; opacity: .75; font-size: .8rem; line-height: 1.6; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.lcta { margin-top: auto; display: grid; gap: 6px; position: sticky; bottom: 0; padding: 14px 0 calc(6px + env(safe-area-inset-bottom)); background: linear-gradient(180deg, rgba(15,122,103,0), rgba(13,104,88,.95) 30%); }
+.bigbtn { border: 0; border-radius: 20px; padding: 16px 18px; background: #fff; color: var(--g1); display: flex; align-items: center; justify-content: center; gap: 12px; font-weight: 900; box-shadow: 0 20px 40px -18px rgba(0,0,0,.6), inset 0 -3px 0 rgba(11,93,80,.12); position: relative; overflow: hidden; transition: transform .15s; }
+.bigbtn:active { transform: scale(.97); }
+.bigbtn::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; inset-inline-start: -60%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent); transform: skewX(-20deg); animation: shine 3.2s ease-in-out infinite; }
+@keyframes shine { 0%, 60% { inset-inline-start: -60%; } 100% { inset-inline-start: 130%; } }
+.bigbtn svg { width: 26px; height: 26px; flex: none; }
+.bigbtn b { display: block; font-size: 1.15rem; } .bigbtn small { display: block; font-size: .78rem; color: var(--muted); font-weight: 700; }
+.bigbtn > span { text-align: start; }
+.bigbtn.sm { padding: 12px 20px; flex: none; }
+.bigbtn.sm b { font-size: 1rem; }
+.lweb { background: none; border: 0; color: rgba(255,255,255,.75); font-weight: 700; font-size: .86rem; padding: 10px; text-decoration: underline; text-underline-offset: 4px; }
+.lfoot { text-align: center; opacity: .6; font-size: .76rem; margin-top: 14px; line-height: 1.8; }
+.ob-in { position: relative; z-index: 1; min-height: 100%; max-width: 440px; margin: 0 auto; padding: calc(22px + env(safe-area-inset-top)) 22px calc(22px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; }
+.obdots { display: flex; gap: 6px; justify-content: center; min-height: 8px; }
+.obdots i { width: 8px; height: 8px; border-radius: 4px; background: rgba(255,255,255,.3); transition: .3s; }
+.obdots i.on { width: 26px; background: #fff; }
+.obs { display: none; flex: 1; flex-direction: column; justify-content: center; text-align: center; animation: rise .45s both; }
+.obs.on { display: flex; }
+.obs h2 { margin: 18px 0 8px; font-size: 1.6rem; font-weight: 900; }
+.obs p { margin: 0 auto; max-width: 360px; opacity: .85; line-height: 2; font-size: .98rem; }
+.obico { width: 96px; height: 96px; border-radius: 28px; margin: 0 auto; box-shadow: 0 24px 50px -18px rgba(0,0,0,.7); }
+.obs .lcard { margin-top: 12px; }
+.obart { width: 190px; height: 190px; margin: 0 auto; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), rgba(255,255,255,.05)); border: 1px solid rgba(255,255,255,.18); display: grid; place-items: center; position: relative; }
+.obart svg { width: 92px; height: 92px; filter: drop-shadow(0 10px 20px rgba(0,0,0,.35)); }
+.obart .chip2 { position: absolute; background: #fff; color: var(--g1); border-radius: 12px; padding: 4px 10px; font-size: .78rem; font-weight: 900; box-shadow: 0 10px 20px -10px rgba(0,0,0,.5); animation: float 3s ease-in-out infinite; }
+.obart .c1 { top: 18px; inset-inline-start: -14px; } .obart .c2 { bottom: 22px; inset-inline-end: -18px; animation-delay: 1.2s; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.avbig { width: 110px; height: 110px; border-radius: 34px; background: #fff; color: var(--g1); display: grid; place-items: center; font-size: 3rem; font-weight: 900; }
+.obform { display: grid; gap: 10px; margin-top: 18px; text-align: start; }
+.obform label.f { color: rgba(255,255,255,.85); }
+.obform input { background: rgba(255,255,255,.1) !important; border-color: rgba(255,255,255,.25) !important; color: #fff !important; }
+.obform input::placeholder { color: rgba(255,255,255,.45); }
+.obnav { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 18px; min-height: 52px; }
+[dir=ltr] .obnav .flip { transform: scaleX(-1); }
+
+/* ── polish ── */
+.view.on { animation: slidein .32s cubic-bezier(.2,.8,.2,1); }
+@keyframes slidein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.view.on .card, .view.on .tile, .view.on .item { animation: rise .45s both; }
+.view.on .tile:nth-child(2), .view.on .card:nth-child(2), .view.on .item:nth-child(2) { animation-delay: .05s; }
+.view.on .tile:nth-child(3), .view.on .card:nth-child(3), .view.on .item:nth-child(3) { animation-delay: .1s; }
+.view.on .tile:nth-child(4), .view.on .card:nth-child(4), .view.on .item:nth-child(4) { animation-delay: .15s; }
+.card, .tile, .item, .btn { transition: transform .15s ease, box-shadow .2s ease; }
+.tile:active, .item:active, .mini:active, .cont:active { transform: scale(.97); }
+.btn:active { transform: scale(.96); }
+@media (hover: hover) { .tile:hover, .item:hover, .mini:hover, .book:hover { transform: translateY(-2px); box-shadow: 0 20px 34px -24px rgba(18,32,42,.55); } }
+.hero { background-size: 160% 160%; animation: hue 12s ease-in-out infinite alternate; }
+@keyframes hue { from { background-position: 0% 0%; } to { background-position: 100% 100%; } }
+.hero::before { content: ""; position: absolute; width: 180px; height: 180px; inset-inline-end: -40px; bottom: -60px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.18' stroke-width='3'%3E%3Cpath d='M50 8l36 21v42L50 92 14 71V29z'/%3E%3Cpath d='M50 22l24 14v28L50 78 26 64V36z' stroke-dasharray='6 6'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain; pointer-events: none; z-index: 0; }
+.cover::after { content: ""; position: absolute; width: 150px; height: 150px; inset-inline-end: -26px; top: -30px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.22' stroke-width='3'%3E%3Cpath d='M50 8l36 21v42L50 92 14 71V29z'/%3E%3Ccircle cx='50' cy='50' r='20'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain; pointer-events: none; }
+.tabbar { left: 12px; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom)); height: var(--tabh); padding: 0 6px; border-radius: 22px; border: 1px solid rgba(255,255,255,.7); background: rgba(255,255,255,.92); box-shadow: 0 18px 40px -16px rgba(18,32,42,.35); -webkit-backdrop-filter: saturate(1.6) blur(16px); backdrop-filter: saturate(1.6) blur(16px); }
+.tabbar button { border-radius: 16px; margin: 7px 2px; transition: color .2s, background .2s; }
+.tabbar button.on { background: var(--soft); }
+.tabbar button.on::before { display: none; }
+.tabbar button.on svg { transform: translateY(-1px); }
+.wrap { padding-bottom: calc(var(--tabh) + 40px + env(safe-area-inset-bottom)); }
+.toast { bottom: calc(var(--tabh) + 26px + env(safe-area-inset-bottom)); }
+.tile .ti { background-image: linear-gradient(145deg, rgba(255,255,255,.6), rgba(255,255,255,0)); }
+.sec { font-size: 1.1rem; }
 /* ── shell ── */
 .top { position: sticky; top: 0; z-index: 25; background: rgba(243,246,245,.97); border-bottom: 1px solid transparent; transition: border-color .2s; }
 .top.sh { border-bottom-color: var(--line); }
@@ -350,15 +436,49 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   <symbol id="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
   <symbol id="chevr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
 </defs></svg>
-<div class="gate" id="gate"><div class="gate-in">
-  <img src="icon-192.png" alt="">
-  <h1>StudyNote</h1>
-  <p>جزوه‌های شیمی آلی · Organic chemistry notes</p>
-  <div class="q">زبان برنامه را انتخاب کنید · Choose your language</div>
-  <button class="lcard" type="button" data-pick="fa"><span class="fl">فا</span><span><b>فارسی</b><small>جزوه‌ها و برنامه به فارسی</small></span><svg class="i ar"><use href="#chev"/></svg></button>
-  <button class="lcard" type="button" data-pick="en" dir="ltr"><span class="fl">EN</span><span><b>English</b><small>Notes and app in English</small></span><svg class="i ar"><use href="#chevr"/></svg></button>
-  <p style="margin-top:22px;font-size:.78rem;opacity:.7"><span data-gate-note>بعداً هم از «من ← زبان» می‌توانید عوض کنید · You can change it later in Me → Language</span></p>
-</div></div>
+<div class="land" id="land">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="land-in">
+    <div class="ltop"><div class="lang" id="landL"><button type="button" data-ll="fa">فا</button><button type="button" data-ll="en">EN</button></div></div>
+    <div class="lhero">
+      <div class="lico"><span class="ring"></span><img src="icon-512.png" alt=""></div>
+      <h1>StudyNote</h1>
+      <p class="ltag" id="lTag"></p>
+    </div>
+    <div class="lfeat" id="lFeat"></div>
+    <div class="lcta">
+      <button class="bigbtn" type="button" id="lInst"><svg><use href="#dl"/></svg><span><b id="lInstT"></b><small id="lInstS"></small></span></button>
+      <button class="lweb" type="button" id="lWeb"></button>
+    </div>
+    <div class="lfoot" id="lFoot"></div>
+  </div>
+</div>
+
+<div class="ob" id="ob">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="ob-in">
+    <div class="obdots" id="obDots"></div>
+    <section class="obs" data-s="0">
+      <img class="obico" src="icon-192.png" alt="">
+      <h2>StudyNote</h2>
+      <p>زبان برنامه را انتخاب کنید<br><span dir="ltr">Choose your language</span></p>
+      <button class="lcard" type="button" data-pick="fa"><span class="fl">فا</span><span><b>فارسی</b><small>جزوه‌ها و برنامه به فارسی</small></span><svg class="i ar"><use href="#chev"/></svg></button>
+      <button class="lcard" type="button" data-pick="en" dir="ltr"><span class="fl">EN</span><span><b>English</b><small>Notes and app in English</small></span><svg class="i ar"><use href="#chevr"/></svg></button>
+    </section>
+    <section class="obs" data-s="1"><div class="obart" id="obA1"></div><h2 data-t="ob1H"></h2><p data-t="ob1P"></p></section>
+    <section class="obs" data-s="2"><div class="obart" id="obA2"></div><h2 data-t="ob2H"></h2><p data-t="ob2P"></p></section>
+    <section class="obs" data-s="3"><div class="obart" id="obA3"></div><h2 data-t="ob3H"></h2><p data-t="ob3P"></p></section>
+    <section class="obs" data-s="4">
+      <div class="obart"><span class="avbig" id="obAv">S</span></div>
+      <h2 data-t="ob4H"></h2><p data-t="ob4P"></p>
+      <div class="obform">
+        <label class="f"><span data-t="fName"></span><input id="oName" autocomplete="name"></label>
+        <label class="f"><span data-t="fTg"></span><input id="oTg" dir="ltr" autocomplete="off" placeholder="@username"></label>
+      </div>
+    </section>
+    <div class="obnav"><button class="lweb" type="button" id="obSkip" data-t="skip2"></button><button class="bigbtn sm" type="button" id="obNext"><b id="obNextT"></b><svg class="flip"><use href="#back"/></svg></button></div>
+  </div>
+</div>
 
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer">
@@ -375,7 +495,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
     <button type="button" id="dInst"><svg><use href="#dl"/></svg><span data-t="instApp"></span></button>
     <a href="https://t.me/itamirabbas" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-t="supT"></span></a>
   </nav>
-  <div class="df"><span id="au3"></span><br>StudyNote <span dir="ltr">v6341afd41a</span></div>
+  <div class="df"><span id="au3"></span><br>StudyNote <span dir="ltr">v569bd6bac5</span></div>
 </aside>
 
 <header class="top" id="bar"><div class="top-in">
@@ -451,7 +571,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
         <div class="row"><span class="ic2"><svg class="i"><use href="#tg"/></svg></span><div class="tx"><span data-t="sup"></span><small dir="ltr" style="text-align:start">@itamirabbas</small></div><a class="btn s" href="https://t.me/itamirabbas" target="_blank" rel="noopener" data-t="msg"></a></div>
       </div>
     </div>
-    <div class="foot"><span id="au2"></span><br>StudyNote · <span dir="ltr">v6341afd41a</span></div>
+    <div class="foot"><span id="au2"></span><br>StudyNote · <span dir="ltr">v569bd6bac5</span></div>
   </section>
 </main>
 
@@ -472,7 +592,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 <script>
 (function () {
   'use strict';
-  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), CONTENT0 = {"v":2,"news":[{"id":"n-2026-11-09-fa","lang":"fa","date":"2026-11-09","pin":true,"title":"StudyNote راه افتاد 🎉","body":"جزوه‌های شیمی آلی ۱ و ۲ حالا روی آیفون، آیپد، اندروید و کامپیوتر باز می‌شوند.\nاز بخش «جزوه‌ها» فصل نمونه‌ی رایگان را ببین و برای خرید دکمه‌ی «خرید» را بزن."},{"id":"n-2026-11-09-en","lang":"en","date":"2026-11-09","pin":true,"title":"StudyNote is live 🎉","body":"Organic Chemistry 1 and 2 notes now open on iPhone, iPad, Android and computers.\nOpen a free sample chapter under “Notes”, and tap “Buy” to order."}],"books":[{"id":"o1","title":{"fa":"شیمی آلی ۱","en":"Organic Chemistry 1"},"sub":{"fa":"از نام‌گذاری تا کربوکسیلیک اسیدها — کامل و تصویری","en":"From nomenclature to carboxylic acids — complete and visual"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۱ با توضیح قدم‌به‌قدم مکانیسم‌ها، شکل‌های دقیق، کارت‌های ترفند و سؤال‌های امتحانی با جواب کامل؛ مناسب کلاس و شب امتحان.","en":"Complete Organic Chemistry 1 notes with step-by-step mechanisms, precise figures, trick cards and exam questions with full answers — for class and the night before the exam."},"editions":["fa","en"],"hours":{"fa":"24","en":"19"},"c1":"#083f37","c2":"#13917b","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری ترکیبات آلی","en":"Nomenclature"},{"fa":"isomer و stereochemistry","en":"Isomerism and stereochemistry"},{"fa":"conformation: Newman و chair","en":"Conformations"},{"fa":"resonance، tautomerism و orbital های π","en":"Resonance, tautomerism, π-orbitals"},{"fa":"alkane ها، alkene ها، alkyne ها و diene ها","en":"Alkanes, alkenes, alkynes, dienes"},{"fa":"ترکیبات aromatic","en":"Aromatic compounds"},{"fa":"alkyl halide ها: جانشینی و حذف","en":"Alkyl halides: SN1, SN2, E1, E2"},{"fa":"acidity، alcohol ها، phenol ها و ether ها","en":"Acidity, alcohols, phenols, ethers"},{"fa":"amine ها و نمک diazonium","en":"Amines and diazonium salts"},{"fa":"aldehyde ها، ketone ها و Grignard","en":"Aldehydes, ketones, Grignard"},{"fa":"enol و enolate: aldol، Mannich، Claisen","en":"Enols and enolates"},{"fa":"carboxylic acid ها و مشتقات","en":"Carboxylic acids and derivatives"}],"extras":[{"fa":"نقشه‌ی بزرگ واکنش‌ها","en":"The reaction map"},{"fa":"دیکشنری واکنشگرها","en":"Reagent dictionary"},{"fa":"قاعده‌ها و ترتیب‌ها","en":"Rules and orderings"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"روش حل سؤال‌ها و اشتباه‌های رایج","en":"How to solve and common mistakes"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"نقشه‌ی تعاملی تبدیل‌ها","en":"Interactive conversion map"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-1-fa.html","label":"فصل ۱۲"},{"lang":"en","file":"samples/sample-3-en.html","label":"Ch. 12"}],"price":{"fa":"","en":""}},{"id":"o2","title":{"fa":"شیمی آلی ۲","en":"Organic Chemistry 2"},"sub":{"fa":"هتروسیکل‌ها، کربوهیدرات‌ها، آمینواسیدها و بیومولکول‌ها","en":"Heterocycles, carbohydrates, amino acids and biomolecules"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۲: هتروسیکل‌ها، قندها، پپتیدها، نوکلئیک اسیدها، لیپیدها، آلکالوئیدها و پلیمرها؛ با مکانیسم‌های مصور، کارت‌های قاعده و ترفند و آزمون شبیه‌سازی‌شده.","en":"Complete Organic Chemistry 2 notes: heterocycles, sugars, peptides, nucleic acids, lipids, alkaloids and polymers — with illustrated mechanisms, rule and trick cards and a simulated exam."},"editions":["fa","en"],"hours":{"fa":"15","en":"12"},"c1":"#1d2b6b","c2":"#3a6fe0","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری heterocycle ها","en":"Heterocycle nomenclature"},{"fa":"heterocycle های پنج‌عضوی و سه‌عضوی","en":"Five- and three-membered heterocycles"},{"fa":"heterocycle های شش‌عضوی و حلقه‌های جوش‌خورده","en":"Six-membered and fused heterocycles"},{"fa":"carbohydrate ها","en":"Carbohydrates"},{"fa":"amino acid ها، peptide ها و پروتئین‌ها","en":"Amino acids, peptides and proteins"},{"fa":"nucleic acid ها، lipid ها، alkaloid ها و polymer ها","en":"Nucleic acids, lipids, alkaloids and polymers"}],"extras":[{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"همه‌ی کارت‌های قاعده","en":"All decision-rule cards"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-2-fa.html","label":"فصل ۶"},{"lang":"en","file":"samples/sample-4-en.html","label":"Ch. 6"}],"price":{"fa":"","en":""}}]}, AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = '6341afd41a';
+  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), CONTENT0 = {"v":2,"news":[{"id":"n-2026-11-09-fa","lang":"fa","date":"2026-11-09","pin":true,"title":"StudyNote راه افتاد 🎉","body":"جزوه‌های شیمی آلی ۱ و ۲ حالا روی آیفون، آیپد، اندروید و کامپیوتر باز می‌شوند.\nاز بخش «جزوه‌ها» فصل نمونه‌ی رایگان را ببین و برای خرید دکمه‌ی «خرید» را بزن."},{"id":"n-2026-11-09-en","lang":"en","date":"2026-11-09","pin":true,"title":"StudyNote is live 🎉","body":"Organic Chemistry 1 and 2 notes now open on iPhone, iPad, Android and computers.\nOpen a free sample chapter under “Notes”, and tap “Buy” to order."}],"books":[{"id":"o1","title":{"fa":"شیمی آلی ۱","en":"Organic Chemistry 1"},"sub":{"fa":"از نام‌گذاری تا کربوکسیلیک اسیدها — کامل و تصویری","en":"From nomenclature to carboxylic acids — complete and visual"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۱ با توضیح قدم‌به‌قدم مکانیسم‌ها، شکل‌های دقیق، کارت‌های ترفند و سؤال‌های امتحانی با جواب کامل؛ مناسب کلاس و شب امتحان.","en":"Complete Organic Chemistry 1 notes with step-by-step mechanisms, precise figures, trick cards and exam questions with full answers — for class and the night before the exam."},"editions":["fa","en"],"hours":{"fa":"24","en":"19"},"c1":"#083f37","c2":"#13917b","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری ترکیبات آلی","en":"Nomenclature"},{"fa":"isomer و stereochemistry","en":"Isomerism and stereochemistry"},{"fa":"conformation: Newman و chair","en":"Conformations"},{"fa":"resonance، tautomerism و orbital های π","en":"Resonance, tautomerism, π-orbitals"},{"fa":"alkane ها، alkene ها، alkyne ها و diene ها","en":"Alkanes, alkenes, alkynes, dienes"},{"fa":"ترکیبات aromatic","en":"Aromatic compounds"},{"fa":"alkyl halide ها: جانشینی و حذف","en":"Alkyl halides: SN1, SN2, E1, E2"},{"fa":"acidity، alcohol ها، phenol ها و ether ها","en":"Acidity, alcohols, phenols, ethers"},{"fa":"amine ها و نمک diazonium","en":"Amines and diazonium salts"},{"fa":"aldehyde ها، ketone ها و Grignard","en":"Aldehydes, ketones, Grignard"},{"fa":"enol و enolate: aldol، Mannich، Claisen","en":"Enols and enolates"},{"fa":"carboxylic acid ها و مشتقات","en":"Carboxylic acids and derivatives"}],"extras":[{"fa":"نقشه‌ی بزرگ واکنش‌ها","en":"The reaction map"},{"fa":"دیکشنری واکنشگرها","en":"Reagent dictionary"},{"fa":"قاعده‌ها و ترتیب‌ها","en":"Rules and orderings"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"روش حل سؤال‌ها و اشتباه‌های رایج","en":"How to solve and common mistakes"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"نقشه‌ی تعاملی تبدیل‌ها","en":"Interactive conversion map"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-1-fa.html","label":"فصل ۱۲"},{"lang":"en","file":"samples/sample-3-en.html","label":"Ch. 12"}],"price":{"fa":"","en":""}},{"id":"o2","title":{"fa":"شیمی آلی ۲","en":"Organic Chemistry 2"},"sub":{"fa":"هتروسیکل‌ها، کربوهیدرات‌ها، آمینواسیدها و بیومولکول‌ها","en":"Heterocycles, carbohydrates, amino acids and biomolecules"},"desc":{"fa":"جزوه‌ی کامل شیمی آلی ۲: هتروسیکل‌ها، قندها، پپتیدها، نوکلئیک اسیدها، لیپیدها، آلکالوئیدها و پلیمرها؛ با مکانیسم‌های مصور، کارت‌های قاعده و ترفند و آزمون شبیه‌سازی‌شده.","en":"Complete Organic Chemistry 2 notes: heterocycles, sugars, peptides, nucleic acids, lipids, alkaloids and polymers — with illustrated mechanisms, rule and trick cards and a simulated exam."},"editions":["fa","en"],"hours":{"fa":"15","en":"12"},"c1":"#1d2b6b","c2":"#3a6fe0","features":[{"fa":"مکانیسم‌های قدم‌به‌قدم با انیمیشن","en":"Step-by-step animated mechanisms"},{"fa":"شکل‌های دقیق و قابل بزرگ‌نمایی، فیلم سه‌بعدی مولکول‌ها","en":"Precise zoomable figures and 3D molecule films"},{"fa":"سؤال امتحانی با جواب کامل در هر فصل","en":"Exam questions with full answers in every chapter"},{"fa":"فلش‌کارت، آزمون شبیه‌سازی‌شده و برگه‌ی شب امتحان","en":"Flashcards, a simulated exam and an exam-night sheet"},{"fa":"جستجو، نشانه‌گذاری و یادداشت شخصی؛ بدون اینترنت","en":"Search, bookmarks and personal notes — works offline"}],"chapters":[{"fa":"نام‌گذاری heterocycle ها","en":"Heterocycle nomenclature"},{"fa":"heterocycle های پنج‌عضوی و سه‌عضوی","en":"Five- and three-membered heterocycles"},{"fa":"heterocycle های شش‌عضوی و حلقه‌های جوش‌خورده","en":"Six-membered and fused heterocycles"},{"fa":"carbohydrate ها","en":"Carbohydrates"},{"fa":"amino acid ها، peptide ها و پروتئین‌ها","en":"Amino acids, peptides and proteins"},{"fa":"nucleic acid ها، lipid ها، alkaloid ها و polymer ها","en":"Nucleic acids, lipids, alkaloids and polymers"}],"extras":[{"fa":"برگه‌ی شب امتحان","en":"Exam-night sheet"},{"fa":"فلش‌کارت و خودآزمایی","en":"Flashcards and self-test"},{"fa":"تمرین سنتز مرحله‌به‌مرحله","en":"Step-by-step synthesis practice"},{"fa":"بانک تعریف‌ها","en":"Definitions bank"},{"fa":"آزمون شبیه‌سازی‌شده","en":"Simulated exam"},{"fa":"همه‌ی کارت‌های قاعده","en":"All decision-rule cards"},{"fa":"همه‌ی کارت‌های ترفند","en":"All trick cards"},{"fa":"منابع","en":"Sources"}],"samples":[{"lang":"fa","file":"samples/sample-2-fa.html","label":"فصل ۶"},{"lang":"en","file":"samples/sample-4-en.html","label":"Ch. 6"}],"price":{"fa":"","en":""}}]}, AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = '569bd6bac5';
   var $ = function (id) { return document.getElementById(id); };
   function b64(s) { var x = atob(s), o = new Uint8Array(x.length); for (var i = 0; i < x.length; i++) o[i] = x.charCodeAt(i); return o; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -667,7 +787,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
       profNote: 'این اطلاعات فقط روی همین دستگاه می‌ماند و جایی فرستاده نمی‌شود؛ برای نوشتن خودکار پیام خرید استفاده می‌شود.',
       rLang: 'زبان', rInst: 'نصب روی صفحه‌ی اصلی', how: 'راهنما', rUpd: 'به‌روزرسانی', check: 'بررسی', upToDate: 'StudyNote به‌روز است.', updating: 'نسخه‌ی تازه دریافت شد…', offlineU: 'برای بررسی به‌روزرسانی اینترنت لازم است.',
       rStore: 'ذخیره‌سازی', perY: 'دائمی — مرورگر فایل‌ها را پاک نمی‌کند', perN: 'عادی', instY: 'نصب شده ✓', instN: 'هنوز نصب نشده', msg: 'پیام',
-      ver: 'نسخه', instApp: 'نصب برنامه', instCH: 'StudyNote را نصب کن', instCP: 'با یک لمس روی صفحه‌ی اصلی؛ سریع‌تر و بدون اینترنت.', instNow: 'نصب', showMe: 'نشانم بده', gotIt: 'فهمیدم', igIosP: 'اپل نصب خودکار را اجازه نمی‌دهد؛ فقط همین سه لمس:', igIosArrow: 'دکمه‌ی Share همین پایین است ↓', igOther: 'در منوی مرورگر گزینه‌ی «Install app» یا «Add to Home screen» را بزن.', igNotSafari: 'در آیفون نصب فقط از Safari یا Chrome جدید ممکن است. اگر این صفحه داخل تلگرام یا برنامه‌ی دیگری باز شده، اول «Open in Safari» را بزن.', installed: 'نصب شد ✓ از صفحه‌ی اصلی بازش کن.', newsS: 'اطلاعیه‌ها', seeAll: 'همه', supT: 'پشتیبانی در تلگرام', rLangS: 'فقط جزوه‌ها و مطالب همین زبان نمایش داده می‌شود', details: 'جزئیات', about: 'درباره‌ی جزوه', feats: 'ویژگی‌ها',
+      ver: 'نسخه', lTag: 'جزوه‌های شیمی آلی، همیشه همراهت؛ روی گوشی، تبلت و کامپیوتر.', lf1: 'نصب در چند ثانیه', lf1s: 'بدون اپ‌استور و بدون حجم زیاد', lf2: 'کار بدون اینترنت', lf2s: 'بعد از نصب، جزوه‌ها همیشه در دسترس‌اند', lf3: 'نمونه‌ی رایگان', lf3s: 'قبل از خرید، یک فصل کامل را ببین', lf4: 'امن و شخصی', lf4s: 'هر جزوه فقط روی دستگاه خودت باز می‌شود', lInst: 'نصب StudyNote', lInsIos: 'آیفون و آیپد · با Safari، سه لمس', lInsAnd: 'یک لمس · رایگان', lInsDesk: 'روی Chrome یا Edge · رایگان', lInsOther: 'رایگان', lWeb: 'فعلاً بدون نصب، در مرورگر ادامه بده', lWebIos: 'ادامه در مرورگر (در آیفون توصیه نمی‌شود)', ob1H: 'جزوه‌ی مخصوص خودت', ob1P: 'هر جزوه با اسم خودت ساخته می‌شود و فقط روی همین دستگاه باز می‌شود؛ امن و بدون نیاز به اینترنت.', ob2H: 'اول ببین، بعد بخر', ob2P: 'از بخش «جزوه‌ها» فصل نمونه‌ی رایگان را بخوان؛ خرید با یک لمس از طریق تلگرام انجام می‌شود.', ob3H: 'همه‌چیز در یک جا', ob3P: 'جستجو، یادداشت، نشانه‌گذاری، انیمیشن مکانیسم‌ها و اطلاعیه‌های تازه؛ همه داخل StudyNote.', ob4H: 'خودت را معرفی کن', ob4P: 'برای نوشتن خودکار پیام خرید؛ فقط روی همین دستگاه می‌ماند. می‌توانی رد شوی.', skip2: 'رد شدن', next: 'بعدی', start: 'شروع', instApp: 'نصب برنامه', instCH: 'StudyNote را نصب کن', instCP: 'با یک لمس روی صفحه‌ی اصلی؛ سریع‌تر و بدون اینترنت.', instNow: 'نصب', showMe: 'نشانم بده', gotIt: 'فهمیدم', igIosP: 'اپل نصب خودکار را اجازه نمی‌دهد؛ فقط همین سه لمس:', igIosArrow: 'دکمه‌ی Share همین پایین است ↓', igOther: 'در منوی مرورگر گزینه‌ی «Install app» یا «Add to Home screen» را بزن.', igNotSafari: 'در آیفون نصب فقط از Safari یا Chrome جدید ممکن است. اگر این صفحه داخل تلگرام یا برنامه‌ی دیگری باز شده، اول «Open in Safari» را بزن.', installed: 'نصب شد ✓ از صفحه‌ی اصلی بازش کن.', newsS: 'اطلاعیه‌ها', seeAll: 'همه', supT: 'پشتیبانی در تلگرام', rLangS: 'فقط جزوه‌ها و مطالب همین زبان نمایش داده می‌شود', details: 'جزئیات', about: 'درباره‌ی جزوه', feats: 'ویژگی‌ها',
       hidOther: '{n} فایل به زبان انگلیسی هم داری؛ برای دیدنش زبان را عوض کن.', switchL: 'تغییر زبان', noBooks: 'به‌زودی جزوه‌های این زبان این‌جا می‌آید.', guest: 'مهمان', setProf: 'برای تکمیل حساب بزن'
     },
     en: {
@@ -684,7 +804,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
       profNote: 'This stays on this device only and is never sent anywhere; it is used to fill in your order message.',
       rLang: 'Language', rInst: 'Add to Home Screen', how: 'How', rUpd: 'Updates', check: 'Check', upToDate: 'StudyNote is up to date.', updating: 'New version received…', offlineU: 'Checking for updates needs the internet.',
       rStore: 'Storage', perY: 'Persistent — the browser keeps your files', perN: 'Standard', instY: 'Installed ✓', instN: 'Not installed yet', msg: 'Message',
-      ver: 'Version', instApp: 'Install app', instCH: 'Install StudyNote', instCP: 'One tap to your Home Screen — faster and works offline.', instNow: 'Install', showMe: 'Show me', gotIt: 'Got it', igIosP: 'Apple doesn’t allow automatic install — it takes just three taps:', igIosArrow: 'The Share button is right below ↓', igOther: 'In the browser menu, tap “Install app” or “Add to Home screen”.', igNotSafari: 'On iPhone you can install only from Safari (or a recent Chrome). If this page opened inside Telegram or another app, tap “Open in Safari” first.', installed: 'Installed ✓ Open it from your Home Screen.', newsS: 'News', seeAll: 'See all', supT: 'Support on Telegram', rLangS: 'Only notes and content in this language are shown', details: 'Details', about: 'About these notes', feats: 'Features',
+      ver: 'Version', lTag: 'Organic chemistry notes that go wherever you go — on phone, tablet and computer.', lf1: 'Installs in seconds', lf1s: 'No app store, tiny download', lf2: 'Works offline', lf2s: 'Once installed, your notes are always there', lf3: 'Free samples', lf3s: 'Read a full chapter before you buy', lf4: 'Safe and personal', lf4s: 'Each copy opens only on your own device', lInst: 'Install StudyNote', lInsIos: 'iPhone & iPad · three taps in Safari', lInsAnd: 'One tap · free', lInsDesk: 'In Chrome or Edge · free', lInsOther: 'Free', lWeb: 'Continue in the browser for now', lWebIos: 'Continue in the browser (not recommended on iPhone)', ob1H: 'Notes made just for you', ob1P: 'Every copy carries your name and opens only on this device — secure, and no internet needed.', ob2H: 'Try first, then buy', ob2P: 'Read a free sample chapter under “Notes”; buying takes one tap through Telegram.', ob3H: 'Everything in one place', ob3P: 'Search, notes, bookmarks, animated mechanisms and the latest announcements — all inside StudyNote.', ob4H: 'Introduce yourself', ob4P: 'Used to fill in your order message; it stays on this device. You can skip this.', skip2: 'Skip', next: 'Next', start: 'Start', instApp: 'Install app', instCH: 'Install StudyNote', instCP: 'One tap to your Home Screen — faster and works offline.', instNow: 'Install', showMe: 'Show me', gotIt: 'Got it', igIosP: 'Apple doesn’t allow automatic install — it takes just three taps:', igIosArrow: 'The Share button is right below ↓', igOther: 'In the browser menu, tap “Install app” or “Add to Home screen”.', igNotSafari: 'On iPhone you can install only from Safari (or a recent Chrome). If this page opened inside Telegram or another app, tap “Open in Safari” first.', installed: 'Installed ✓ Open it from your Home Screen.', newsS: 'News', seeAll: 'See all', supT: 'Support on Telegram', rLangS: 'Only notes and content in this language are shown', details: 'Details', about: 'About these notes', feats: 'Features',
       hidOther: 'You also have {n} file(s) in Persian — switch the language to see them.', switchL: 'Switch language', noBooks: 'Notes in this language are coming soon.', guest: 'Guest', setProf: 'Tap to set up your account'
     }
   };
@@ -854,7 +974,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 
   /* ── install ── */
   var deferred = null, skipInst = ls('jzr:skip') === '1';
-  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; if (!$('v-home')) return; renderInstall(); renderMe(); renderInstC(); });
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; if (!$('v-home')) return; if ($('land').classList.contains('on')) landHtml(); renderInstall(); renderMe(); renderInstC(); });
   function iosSteps() { return ['i1', 'i2', 'i3', 'i4'].map(function (k, i) { return '<div class="st"><span class="k">' + num(i + 1) + '</span><div>' + U(k) + '</div></div>'; }).join(''); }
   function renderInstall() {
     var el = $('inst'), gate = IOS && !STANDALONE && !skipInst;
@@ -955,11 +1075,55 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   if (ss('jzr:noauto')) { ss('jzr:noauto', null); if (!back) back = 'lib'; }
   var start = back ? { v: back.split(':')[0], a: back.split(':')[1] } : fromHash();
   function boot() { apply(); try { history.replaceState({ d: 0 }, '', location.pathname + location.search); } catch (e) {} DEPTH = 0; show(start.v || 'home', start.a, 'replace'); fetchContent(); }
-  if (!ls('jzr:lang')) {
-    $('gate').classList.add('on');
-    [].forEach.call(document.querySelectorAll('[data-pick]'), function (b) { b.onclick = function () { L = b.getAttribute('data-pick'); ls('jzr:lang', L); $('gate').classList.remove('on'); boot(); }; });
-    apply();
-  } else boot();
+  /* ── landing page in the browser (install first), then first-run onboarding inside the installed app ── */
+  var ART = {
+    obA1: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><rect x="9" y="8.5" width="6" height="5" rx="1.2"/><path d="M10.3 8.5V7.3a1.7 1.7 0 0 1 3.4 0v1.2"/></svg>',
+    obA2: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16v10H4zM3 7h18v4H3zM12 7v14"/><path d="M12 7c-1.5-3-5-3.5-5-1.2S10 7 12 7c2 0 5-.2 5-1.2S13.5 4 12 7z"/></svg>',
+    obA3: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8.7 5v10L12 22l-8.7-5V7z"/><circle cx="12" cy="12" r="4"/></svg>'
+  };
+  var CHIPS = { obA1: ['🔒', '✓'], obA2: ['🎁', 'Telegram'], obA3: ['🔍', '★'] };
+  function landHtml() {
+    var feats = [['dl', 'lf1'], ['shield', 'lf2'], ['gift', 'lf3'], ['book', 'lf4']];
+    $('lFeat').innerHTML = feats.map(function (f) { return '<div class="lf"><span class="fi"><svg><use href="#' + f[0] + '"/></svg></span><div><b>' + esc(U(f[1])) + '</b><small>' + esc(U(f[1] + 's')) + '</small></div></div>'; }).join('');
+    $('lTag').textContent = U('lTag'); $('lInstT').textContent = U('lInst');
+    $('lInstS').textContent = IOS ? U('lInsIos') : ANDROID ? U('lInsAnd') : deferred ? U('lInsDesk') : U('lInsOther');
+    $('lWeb').textContent = IOS ? U('lWebIos') : U('lWeb');
+    $('lFoot').textContent = AUTH[L] || AUTH.fa;
+    [].forEach.call(document.querySelectorAll('[data-ll]'), function (b) { b.classList.toggle('on', b.getAttribute('data-ll') === L); });
+    var de = document.documentElement; de.lang = L; de.dir = L === 'fa' ? 'rtl' : 'ltr';
+  }
+  [].forEach.call(document.querySelectorAll('[data-ll]'), function (b) { b.onclick = function () { L = b.getAttribute('data-ll'); apply(); landHtml(); }; });
+  $('lInst').onclick = function () { doInstall(); };
+  $('lWeb').onclick = function () { ls('jzr:web', '1'); if (IOS) { skipInst = true; ls('jzr:skip', '1'); } $('land').classList.remove('on'); afterLanding(); };
+  window.addEventListener('appinstalled', function () { if ($('land') && $('land').classList.contains('on')) { $('lInstT').textContent = U('installed'); $('lInstS').textContent = ''; } });
+
+  var OB = 0, OBN = 5, obLangPicked = !!ls('jzr:lang');
+  function obShow(n) {
+    OB = n; [].forEach.call(document.querySelectorAll('.obs'), function (s) { s.classList.toggle('on', +s.getAttribute('data-s') === n); });
+    $('obDots').innerHTML = n === 0 ? '' : [1, 2, 3, 4].map(function (k) { return '<i class="' + (k === n ? 'on' : '') + '"></i>'; }).join('');
+    ['obA1', 'obA2', 'obA3'].forEach(function (id) { $(id).innerHTML = ART[id] + '<span class="chip2 c1">' + CHIPS[id][0] + '</span><span class="chip2 c2">' + CHIPS[id][1] + '</span>'; });
+    $('obNext').parentNode.style.visibility = n === 0 ? 'hidden' : '';
+    $('obNextT').textContent = n === OBN - 1 ? U('start') : U('next');
+    $('obSkip').style.visibility = n === OBN - 1 ? 'hidden' : '';
+    if (n === 4) { var p = prof(); $('oName').value = p.name || ''; $('oTg').value = p.tg || ''; $('obAv').textContent = (p.name || 'S').charAt(0).toUpperCase(); }
+  }
+  [].forEach.call(document.querySelectorAll('[data-pick]'), function (b) { b.onclick = function () { L = b.getAttribute('data-pick'); ls('jzr:lang', L); apply(); obShow(1); }; });
+  $('oName').oninput = function () { $('obAv').textContent = (this.value.trim() || 'S').charAt(0).toUpperCase(); };
+  function obDone() {
+    var n = $('oName').value.trim(), tg = $('oTg').value.trim();
+    if (n || tg) { if (tg && !/^@/.test(tg) && !/^\+?\d/.test(tg)) tg = '@' + tg; var p = prof(); p.name = n.slice(0, 60) || p.name || ''; p.tg = tg.slice(0, 40) || p.tg || ''; ls('jzr:prof', JSON.stringify(p)); }
+    try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) {}
+    ls('jzr:ob', '1'); $('ob').classList.remove('on'); boot();
+  }
+  $('obNext').onclick = function () { if (OB >= OBN - 1) obDone(); else obShow(OB + 1); };
+  $('obSkip').onclick = obDone;
+  function afterLanding() {
+    if (!ls('jzr:lang') || !ls('jzr:ob')) { apply(); $('ob').classList.add('on'); obShow(ls('jzr:lang') ? 1 : 0); }
+    else boot();
+  }
+  var wantLanding = !STANDALONE && !ls('jzr:web');
+  if (wantLanding) { apply(); landHtml(); $('land').classList.add('on'); }
+  else afterLanding();
   $('spC').onclick = function () { $('splash').classList.remove('on'); };
 })();
 </script>
