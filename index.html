@@ -9,11 +9,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="جزوه‌خوان">
+<meta name="apple-mobile-web-app-title" content="StudyNote">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="favicon.png">
-<title>جزوه‌خوان</title>
+<title>StudyNote</title>
 <style>
 @font-face { font-family: Vazirmatn; src: url("Vazirmatn.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 :root { --ink: #12202a; --ink2: #3a4752; --muted: #6a7782; --line: #e3e9ec; --bg: #f3f6f5; --card: #fff; --g1: #0b5d50; --g2: #13917b; --soft: #e8f5f1; --gold: #b86a0b; --gold-soft: #fff4de; --red: #b42318; --red-soft: #fdeceb; --blue: #2f5fd0; --blue-soft: #e9effd; }
@@ -154,7 +154,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 <script>
 (function () {
   'use strict';
-  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), SAMPLES = [], AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = '7a3dbe882c';
+  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), SAMPLES = [], AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = '13898052b9';
   var $ = function (id) { return document.getElementById(id); };
   function b64(s) { var x = atob(s), o = new Uint8Array(x.length); for (var i = 0; i < x.length; i++) o[i] = x.charCodeAt(i); return o; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -169,7 +169,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   var SH = '<svg><use href="#share"/></svg>', AD = '<svg><use href="#addsq"/></svg>';
   var T = {
     fa: {
-      name: 'جزوه‌خوان', heroH: 'جزوه‌هایت همین‌جا', heroP: 'فایل «دریافت کد» و فایل جزوه‌ای را که گرفته‌ای (از تلگرام، واتس‌اپ، ایمیل یا هر جای دیگر) یک بار این‌جا اضافه کن؛ از آن به بعد با یک لمس، حتی بدون اینترنت، باز می‌شود.',
+      name: 'StudyNote', heroH: 'جزوه‌هایت همین‌جا', heroP: 'فایل «دریافت کد» و فایل جزوه‌ای را که گرفته‌ای (از تلگرام، واتس‌اپ، ایمیل یا هر جای دیگر) یک بار این‌جا اضافه کن؛ از آن به بعد با یک لمس، حتی بدون اینترنت، باز می‌شود.',
       add: 'افزودن فایل', addS: 'از Files، دانلودها یا هر پوشه‌ای', mine: 'فایل‌های من', samples: 'نمونه‌ی رایگان', open: 'باز کن',
       empty: 'هنوز فایلی اضافه نکرده‌ای.<br>اول فایل «دریافت کد» را که فروشنده فرستاده اضافه کن.',
       kBook: 'جزوه', kGetter: 'دریافت کد', kSample: 'نمونه', forW: 'مخصوص', added: 'اضافه شد',
@@ -177,58 +177,58 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
       helpH: 'راهنما', sup: 'پشتیبانی:',
       h1: 'فایل را از واتس‌اپ یا تلگرام به این‌جا بیاورم',
       h1b: (IOS ? '' : '') +
-        '<h4>آیفون و آیپد — واتس‌اپ</h4><ol><li>در چت، روی فایل بزن تا باز شود.</li><li>دکمه‌ی اشتراک ' + '<span class="kbd">' + SH + '</span> را بزن و <span class="kbd">Save to Files</span> را انتخاب کن.</li><li>یک پوشه انتخاب کن، مثلاً <span class="kbd">On My iPhone</span>، و <span class="kbd">Save</span> را بزن.</li><li>برگرد به جزوه‌خوان ← «افزودن فایل» ← <span class="kbd">Browse</span> ← همان پوشه ← فایل را انتخاب کن.</li></ol>' +
-        '<h4>آیفون و آیپد — تلگرام</h4><ol><li>روی فایل بزن تا دانلود و باز شود.</li><li>دکمه‌ی اشتراک ' + '<span class="kbd">' + SH + '</span> یا <span class="kbd">⋯</span> را بزن و <span class="kbd">Save to Files</span> را انتخاب کن.</li><li>در جزوه‌خوان: «افزودن فایل» ← <span class="kbd">Browse</span> ← فایل را انتخاب کن.</li></ol>' +
-        '<h4>ایمیل، AirDrop یا سایت</h4><ol><li>فایل را نگه دار یا اشتراک بزن ← <span class="kbd">Save to Files</span>.</li><li>در جزوه‌خوان «افزودن فایل» را بزن.</li></ol>' +
-        '<h4>اندروید</h4><ol><li>فایل را در واتس‌اپ یا تلگرام دانلود کن.</li><li>در جزوه‌خوان «افزودن فایل» را بزن؛ فایل را از <span class="kbd">Recent</span> یا <span class="kbd">Downloads</span> انتخاب کن. اگر آن‌جا نبود، در پوشه‌ی <span class="kbd">WhatsApp</span> یا <span class="kbd">Telegram</span> دنبالش بگرد.</li></ol>',
+        '<h4>آیفون و آیپد — واتس‌اپ</h4><ol><li>در چت، روی فایل بزن تا باز شود.</li><li>دکمه‌ی اشتراک ' + '<span class="kbd">' + SH + '</span> را بزن و <span class="kbd">Save to Files</span> را انتخاب کن.</li><li>یک پوشه انتخاب کن، مثلاً <span class="kbd">On My iPhone</span>، و <span class="kbd">Save</span> را بزن.</li><li>برگرد به StudyNote ← «افزودن فایل» ← <span class="kbd">Browse</span> ← همان پوشه ← فایل را انتخاب کن.</li></ol>' +
+        '<h4>آیفون و آیپد — تلگرام</h4><ol><li>روی فایل بزن تا دانلود و باز شود.</li><li>دکمه‌ی اشتراک ' + '<span class="kbd">' + SH + '</span> یا <span class="kbd">⋯</span> را بزن و <span class="kbd">Save to Files</span> را انتخاب کن.</li><li>در StudyNote: «افزودن فایل» ← <span class="kbd">Browse</span> ← فایل را انتخاب کن.</li></ol>' +
+        '<h4>ایمیل، AirDrop یا سایت</h4><ol><li>فایل را نگه دار یا اشتراک بزن ← <span class="kbd">Save to Files</span>.</li><li>در StudyNote «افزودن فایل» را بزن.</li></ol>' +
+        '<h4>اندروید</h4><ol><li>فایل را در واتس‌اپ یا تلگرام دانلود کن.</li><li>در StudyNote «افزودن فایل» را بزن؛ فایل را از <span class="kbd">Recent</span> یا <span class="kbd">Downloads</span> انتخاب کن. اگر آن‌جا نبود، در پوشه‌ی <span class="kbd">WhatsApp</span> یا <span class="kbd">Telegram</span> دنبالش بگرد.</li></ol>',
       h2: 'خرید و فعال‌سازی، قدم به قدم',
-      h2b: '<ol><li>فایل «دریافت کد» را که فروشنده فرستاده این‌جا اضافه کن؛ خودش باز می‌شود.</li><li>دکمه‌ی «کپی پیام برای فروشنده» را بزن و پیام را برای فروشنده بفرست.</li><li>فایل جزوه و کد فعال‌سازی (<span class="kbd">JZ2-…</span>) را می‌گیری. فایل جزوه را هم این‌جا اضافه کن.</li><li>کد را بچسبان و «فعال‌سازی» را بزن. تمام! دفعه‌های بعد فقط جزوه‌خوان را باز کن.</li></ol>',
+      h2b: '<ol><li>فایل «دریافت کد» را که فروشنده فرستاده این‌جا اضافه کن؛ خودش باز می‌شود.</li><li>دکمه‌ی «کپی پیام برای فروشنده» را بزن و پیام را برای فروشنده بفرست.</li><li>فایل جزوه و کد فعال‌سازی (<span class="kbd">JZ2-…</span>) را می‌گیری. فایل جزوه را هم این‌جا اضافه کن.</li><li>کد را بچسبان و «فعال‌سازی» را بزن. تمام! دفعه‌های بعد فقط StudyNote را باز کن.</li></ol>',
       h3: 'نکته‌های مهم تا همیشه کار کند',
-      h3b: '<ol><li>همه‌ی کارها (دریافت کد، فعال‌سازی و خواندن) را <b>داخل همین جزوه‌خوان و روی همین دستگاه</b> انجام بده.</li><li>' + (IOS ? 'آیکون جزوه‌خوان را از صفحه‌ی اصلی <b>پاک نکن</b>؛ با پاک کردنش فعال‌سازی هم پاک می‌شود.' : 'اطلاعات مرورگر (Site data) را برای این سایت پاک نکن.') + '</li><li>دستگاه عوض می‌کنی؟ اول داخل جزوه از منوی <span class="kbd">Aa</span> «انتقال به دستگاه دیگر» را بزن و کد انتقال را برای فروشنده بفرست.</li><li>برای برگشتن از جزوه به این صفحه: منوی <span class="kbd">Aa</span> ← «کتابخانه‌ی جزوه‌خوان».</li></ol>',
-      h4: 'جزوه‌خوان چیست و امن است؟',
-      h4b: 'جزوه‌خوان یک برنامه‌ی تحت وب است که فقط فایل‌های همین فروشنده را باز می‌کند (امضای فایل بررسی می‌شود). فایل‌هایت فقط روی دستگاه خودت ذخیره می‌شوند و جایی فرستاده نمی‌شوند. بعد از اولین بار بدون اینترنت هم کار می‌کند.',
-      instH: 'اول جزوه‌خوان را روی صفحه‌ی اصلی نصب کن',
-      instP: 'در آیفون و آیپد، جزوه فقط وقتی همیشه باز می‌ماند که از آیکون جزوه‌خوان روی صفحه‌ی اصلی استفاده کنی. یک بار انجامش بده (کمتر از یک دقیقه):',
+      h3b: '<ol><li>همه‌ی کارها (دریافت کد، فعال‌سازی و خواندن) را <b>داخل همین StudyNote و روی همین دستگاه</b> انجام بده.</li><li>' + (IOS ? 'آیکون StudyNote را از صفحه‌ی اصلی <b>پاک نکن</b>؛ با پاک کردنش فعال‌سازی هم پاک می‌شود.' : 'اطلاعات مرورگر (Site data) را برای این سایت پاک نکن.') + '</li><li>دستگاه عوض می‌کنی؟ اول داخل جزوه از منوی <span class="kbd">Aa</span> «انتقال به دستگاه دیگر» را بزن و کد انتقال را برای فروشنده بفرست.</li><li>برای برگشتن از جزوه به این صفحه: منوی <span class="kbd">Aa</span> ← «کتابخانه‌ی StudyNote».</li></ol>',
+      h4: 'StudyNote چیست و امن است؟',
+      h4b: 'StudyNote یک برنامه‌ی تحت وب است که فقط فایل‌های همین فروشنده را باز می‌کند (امضای فایل بررسی می‌شود). فایل‌هایت فقط روی دستگاه خودت ذخیره می‌شوند و جایی فرستاده نمی‌شوند. بعد از اولین بار بدون اینترنت هم کار می‌کند.',
+      instH: 'اول StudyNote را روی صفحه‌ی اصلی نصب کن',
+      instP: 'در آیفون و آیپد، جزوه فقط وقتی همیشه باز می‌ماند که از آیکون StudyNote روی صفحه‌ی اصلی استفاده کنی. یک بار انجامش بده (کمتر از یک دقیقه):',
       i1: 'این صفحه را در <b>Safari</b> باز کن. اگر داخل تلگرام یا واتس‌اپ باز شده، دکمه‌ی <span class="kbd">Open in Safari</span> یا آیکون قطب‌نما را بزن.',
       i2: 'دکمه‌ی اشتراک <span class="kbd">' + SH + ' Share</span> را بزن؛ در آیفون پایین صفحه است و در آیپد بالای صفحه.',
       i3: 'در فهرست کمی پایین برو، <span class="kbd">' + AD + ' Add to Home Screen</span> را بزن و بعد <span class="kbd">Add</span> را.',
-      i4: 'از صفحه‌ی اصلی، آیکون <b>«جزوه‌خوان»</b> را باز کن و فایل‌هایت را آن‌جا اضافه کن.',
+      i4: 'از صفحه‌ی اصلی، آیکون <b>StudyNote</b> را باز کن و فایل‌هایت را آن‌جا اضافه کن.',
       skip: 'ادامه بدون نصب — توصیه نمی‌شود، چون ممکن است بعد از مدتی فعال‌سازی پاک شود',
-      andP: 'برای دسترسی سریع، جزوه‌خوان را روی صفحه‌ی اصلی نصب کن.', andB: 'نصب', andM: 'منوی ⋮ ← Add to Home screen',
-      badSig: 'این فایل را فروشنده‌ی این جزوه‌خوان نساخته یا هنگام ارسال خراب شده است. فایل را دوباره از فروشنده بگیر.',
+      andP: 'برای دسترسی سریع، StudyNote را روی صفحه‌ی اصلی نصب کن.', andB: 'نصب', andM: 'منوی ⋮ ← Add to Home screen',
+      badSig: 'این فایل را فروشنده‌ی این StudyNote نساخته یا هنگام ارسال خراب شده است. فایل را دوباره از فروشنده بگیر.',
       notHtml: 'این فایل، فایل جزوه یا دریافت کد نیست.', readErr: 'خواندن فایل ممکن نشد. دوباره امتحان کن.', dup: 'این فایل قبلاً اضافه شده بود.', noSpace: 'جای کافی روی دستگاه نیست.',
-      delQ: 'حذف از جزوه‌خوان؟', delP: 'فقط فایل از این فهرست حذف می‌شود؛ فعال‌سازی‌ات سر جایش می‌ماند و هر وقت دوباره همین فایل را اضافه کنی، باز می‌شود.', del: 'حذف', cancel: 'انصراف', openB: 'باز کردن',
+      delQ: 'حذف از StudyNote؟', delP: 'فقط فایل از این فهرست حذف می‌شود؛ فعال‌سازی‌ات سر جایش می‌ماند و هر وقت دوباره همین فایل را اضافه کنی، باز می‌شود.', del: 'حذف', cancel: 'انصراف', openB: 'باز کردن',
       offline: 'برای باز کردن نمونه یک بار اینترنت لازم است.', store: 'مرورگر اجازه‌ی ذخیره نمی‌دهد. از حالت خصوصی (Private) خارج شو.'
     },
     en: {
-      name: 'Jozve Reader', heroH: 'Your notes, all in one place', heroP: 'Add the “device code” file and the notes file you received (from Telegram, WhatsApp, email or anywhere) here once. From then on they open with one tap, even offline.',
+      name: 'StudyNote', heroH: 'Your notes, all in one place', heroP: 'Add the “device code” file and the notes file you received (from Telegram, WhatsApp, email or anywhere) here once. From then on they open with one tap, even offline.',
       add: 'Add a file', addS: 'From Files, Downloads or any folder', mine: 'My files', samples: 'Free samples', open: 'Open',
       empty: 'No files yet.<br>Start by adding the “device code” file the seller sent you.',
       kBook: 'Notes', kGetter: 'Device code', kSample: 'Sample', forW: 'for', added: 'added',
       opening: 'Opening…', toLib: 'Go to library',
       helpH: 'Help', sup: 'Support:',
       h1: 'Getting a file here from WhatsApp or Telegram',
-      h1b: '<h4>iPhone / iPad — WhatsApp</h4><ol><li>In the chat, tap the file to open it.</li><li>Tap Share <span class="kbd">' + SH + '</span> → <span class="kbd">Save to Files</span>.</li><li>Pick a folder (e.g. <span class="kbd">On My iPhone</span>) and tap <span class="kbd">Save</span>.</li><li>Back in Jozve Reader → “Add a file” → <span class="kbd">Browse</span> → that folder → pick the file.</li></ol>' +
-        '<h4>iPhone / iPad — Telegram</h4><ol><li>Tap the file so it downloads and opens.</li><li>Share <span class="kbd">' + SH + '</span> (or <span class="kbd">⋯</span>) → <span class="kbd">Save to Files</span>.</li><li>In Jozve Reader: “Add a file” → <span class="kbd">Browse</span> → pick it.</li></ol>' +
+      h1b: '<h4>iPhone / iPad — WhatsApp</h4><ol><li>In the chat, tap the file to open it.</li><li>Tap Share <span class="kbd">' + SH + '</span> → <span class="kbd">Save to Files</span>.</li><li>Pick a folder (e.g. <span class="kbd">On My iPhone</span>) and tap <span class="kbd">Save</span>.</li><li>Back in StudyNote → “Add a file” → <span class="kbd">Browse</span> → that folder → pick the file.</li></ol>' +
+        '<h4>iPhone / iPad — Telegram</h4><ol><li>Tap the file so it downloads and opens.</li><li>Share <span class="kbd">' + SH + '</span> (or <span class="kbd">⋯</span>) → <span class="kbd">Save to Files</span>.</li><li>In StudyNote: “Add a file” → <span class="kbd">Browse</span> → pick it.</li></ol>' +
         '<h4>Email, AirDrop or a website</h4><ol><li>Long-press or share the file → <span class="kbd">Save to Files</span>.</li><li>Tap “Add a file” here.</li></ol>' +
         '<h4>Android</h4><ol><li>Download the file in WhatsApp or Telegram.</li><li>Tap “Add a file” here and pick it from <span class="kbd">Recent</span> or <span class="kbd">Downloads</span> (or the WhatsApp/Telegram folder).</li></ol>',
       h2: 'Buying and activating, step by step',
-      h2b: '<ol><li>Add the “device code” file from the seller here; it opens by itself.</li><li>Tap “Copy message for the seller” and send the message to the seller.</li><li>You receive the notes file and an activation code (<span class="kbd">JZ2-…</span>). Add the notes file here too.</li><li>Paste the code and tap “Activate”. Done — next time just open Jozve Reader.</li></ol>',
+      h2b: '<ol><li>Add the “device code” file from the seller here; it opens by itself.</li><li>Tap “Copy message for the seller” and send the message to the seller.</li><li>You receive the notes file and an activation code (<span class="kbd">JZ2-…</span>). Add the notes file here too.</li><li>Paste the code and tap “Activate”. Done — next time just open StudyNote.</li></ol>',
       h3: 'Keep it working',
-      h3b: '<ol><li>Do everything (device code, activation, reading) <b>inside this reader, on this device</b>.</li><li>' + (IOS ? '<b>Don’t delete</b> the Jozve Reader icon from your Home Screen — that also deletes your activation.' : 'Don’t clear this site’s data in your browser.') + '</li><li>Changing device? First, inside the notes open the <span class="kbd">Aa</span> menu → “Move to another device” and send the transfer code to the seller.</li><li>To come back here from the notes: <span class="kbd">Aa</span> menu → “Reader library”.</li></ol>',
-      h4: 'What is Jozve Reader — is it safe?',
-      h4b: 'Jozve Reader is a web app that only opens files made by this seller (each file’s signature is checked). Your files are stored only on your device and are not sent anywhere. After the first time it also works offline.',
-      instH: 'First, add Jozve Reader to your Home Screen',
-      instP: 'On iPhone and iPad your notes stay activated only when you use the Jozve Reader icon on your Home Screen. Do this once (under a minute):',
+      h3b: '<ol><li>Do everything (device code, activation, reading) <b>inside this reader, on this device</b>.</li><li>' + (IOS ? '<b>Don’t delete</b> the StudyNote icon from your Home Screen — that also deletes your activation.' : 'Don’t clear this site’s data in your browser.') + '</li><li>Changing device? First, inside the notes open the <span class="kbd">Aa</span> menu → “Move to another device” and send the transfer code to the seller.</li><li>To come back here from the notes: <span class="kbd">Aa</span> menu → “Reader library”.</li></ol>',
+      h4: 'What is StudyNote — is it safe?',
+      h4b: 'StudyNote is a web app that only opens files made by this seller (each file’s signature is checked). Your files are stored only on your device and are not sent anywhere. After the first time it also works offline.',
+      instH: 'First, add StudyNote to your Home Screen',
+      instP: 'On iPhone and iPad your notes stay activated only when you use the StudyNote icon on your Home Screen. Do this once (under a minute):',
       i1: 'Open this page in <b>Safari</b>. (If it opened inside Telegram or WhatsApp, tap <span class="kbd">Open in Safari</span> or the compass icon.)',
       i2: 'Tap Share <span class="kbd">' + SH + ' Share</span> (bottom on iPhone, top on iPad).',
       i3: 'Scroll down, tap <span class="kbd">' + AD + ' Add to Home Screen</span>, then <span class="kbd">Add</span>.',
-      i4: 'Open <b>Jozve Reader</b> from your Home Screen and add your files there.',
+      i4: 'Open <b>StudyNote</b> from your Home Screen and add your files there.',
       skip: 'Continue without installing (not recommended — the activation may be cleared after a while)',
-      andP: 'Install Jozve Reader on your Home Screen for quick access.', andB: 'Install', andM: 'Menu ⋮ → Add to Home screen',
+      andP: 'Install StudyNote on your Home Screen for quick access.', andB: 'Install', andM: 'Menu ⋮ → Add to Home screen',
       badSig: 'This file was not made by this reader’s seller, or it was damaged in transfer. Get the file again from the seller.',
       notHtml: 'This is not a notes or device-code file.', readErr: 'Could not read the file. Please try again.', dup: 'This file was already added.', noSpace: 'Not enough space on the device.',
-      delQ: 'Remove from Jozve Reader?', delP: 'Only the file is removed from this list. Your activation stays, and if you add the same file again it opens.', del: 'Remove', cancel: 'Cancel', openB: 'Open',
+      delQ: 'Remove from StudyNote?', delP: 'Only the file is removed from this list. Your activation stays, and if you add the same file again it opens.', del: 'Remove', cancel: 'Cancel', openB: 'Open',
       offline: 'Opening a sample needs the internet once.', store: 'The browser does not allow storing data. Leave private mode.'
     }
   };
