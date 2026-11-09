@@ -154,7 +154,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
 <script>
 (function () {
   'use strict';
-  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), SAMPLES = [], AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = '13898052b9';
+  var PK = b64("UbuhH7UmX/AmLceNt07R6QhHwoWUgc+z0AKctR6vMS4="), SAMPLES = [{"t":"شیمی آلی ۱ — فصل نمونه (فصل ۱۲)","f":"sample-1-fa.html","lang":"fa"},{"t":"شیمی آلی ۲ — فصل نمونه (فصل ۶)","f":"sample-2-fa.html","lang":"fa"},{"t":"Organic Chemistry 1 — Free sample (Ch. 12)","f":"sample-3-en.html","lang":"en"},{"t":"Organic Chemistry 2 — Free sample (Ch. 6)","f":"sample-4-en.html","lang":"en"}], AUTH = {"fa":"گردآوری: امیرعباس برامکی","en":"Curated by Amirabbas Baramaki"}, VER = 'c5410c0534';
   var $ = function (id) { return document.getElementById(id); };
   function b64(s) { var x = atob(s), o = new Uint8Array(x.length); for (var i = 0; i < x.length; i++) o[i] = x.charCodeAt(i); return o; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -195,7 +195,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
       i4: 'از صفحه‌ی اصلی، آیکون <b>StudyNote</b> را باز کن و فایل‌هایت را آن‌جا اضافه کن.',
       skip: 'ادامه بدون نصب — توصیه نمی‌شود، چون ممکن است بعد از مدتی فعال‌سازی پاک شود',
       andP: 'برای دسترسی سریع، StudyNote را روی صفحه‌ی اصلی نصب کن.', andB: 'نصب', andM: 'منوی ⋮ ← Add to Home screen',
-      badSig: 'این فایل را فروشنده‌ی این StudyNote نساخته یا هنگام ارسال خراب شده است. فایل را دوباره از فروشنده بگیر.',
+      badSig: 'این فایل را فروشنده‌ی جزوه‌ها نساخته یا هنگام ارسال خراب شده است. فایل را دوباره از فروشنده بگیر.',
       notHtml: 'این فایل، فایل جزوه یا دریافت کد نیست.', readErr: 'خواندن فایل ممکن نشد. دوباره امتحان کن.', dup: 'این فایل قبلاً اضافه شده بود.', noSpace: 'جای کافی روی دستگاه نیست.',
       delQ: 'حذف از StudyNote؟', delP: 'فقط فایل از این فهرست حذف می‌شود؛ فعال‌سازی‌ات سر جایش می‌ماند و هر وقت دوباره همین فایل را اضافه کنی، باز می‌شود.', del: 'حذف', cancel: 'انصراف', openB: 'باز کردن',
       offline: 'برای باز کردن نمونه یک بار اینترنت لازم است.', store: 'مرورگر اجازه‌ی ذخیره نمی‌دهد. از حالت خصوصی (Private) خارج شو.'
@@ -358,7 +358,7 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   });
   function renderSamples() {
     if (!SAMPLES || !SAMPLES.length) { $('smpW').style.display = 'none'; return; }
-    var mine = SAMPLES.filter(function (s) { return s.lang === L; }), list = mine.length ? mine : SAMPLES;
+    var list = SAMPLES.filter(function (s) { return s.lang === L; }).concat(SAMPLES.filter(function (s) { return s.lang !== L; }));
     $('smpW').style.display = '';
     $('smp').innerHTML = list.map(function (s, i) { return '<div class="item main" data-s="' + SAMPLES.indexOf(s) + '"><div class="ic sample"><svg><use href="#gift"/></svg></div><div class="tx"><b><bdi>' + esc(s.t) + '</bdi><span class="tag">' + (s.lang === 'en' ? 'EN' : 'FA') + '</span></b><small>' + esc(U('kSample')) + '</small></div><button class="open" type="button">' + esc(U('open')) + '</button></div>'; }).join('');
   }
@@ -394,7 +394,15 @@ input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; poin
   document.addEventListener('dragover', function (e) { e.preventDefault(); });
   document.addEventListener('drop', function (e) { e.preventDefault(); if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
 
-  if ('serviceWorker' in navigator && location.protocol === 'https:') { navigator.serviceWorker.register('sw.js').catch(function () {}); }
+  /* auto-update: check for a newer reader on every launch; when a new version takes over while the library is on screen, reload once */
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    var hadCtl = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function (reg) { try { reg.update(); } catch (e) {} }).catch(function () {});
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (!hadCtl || !document.getElementById('list') || ss('jzr:upd')) return;
+      ss('jzr:upd', '1'); ss('jzr:noauto', '1'); location.reload();
+    });
+  }
   apply();
 
   /* reopen the last notes automatically (the usual case: one book) unless the reader asked for the library */
